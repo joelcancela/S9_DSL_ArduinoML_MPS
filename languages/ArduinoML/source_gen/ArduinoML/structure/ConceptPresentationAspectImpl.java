@@ -22,7 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Action:
         if (props_Action == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
+          cpb.presentationByReference(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a3cL, 0x110dd9137bf9a41L, "target", "", "");
           props_Action = cpb.create();
         }
         return props_Action;

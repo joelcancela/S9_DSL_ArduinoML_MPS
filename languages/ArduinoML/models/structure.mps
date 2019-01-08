@@ -107,6 +107,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="4gRp4RJTCL" resolve="State" />
     </node>
+    <node concept="1TJgyi" id="4gRp4RK74g" role="1TKVEl">
+      <property role="IQ2nx" value="76804809440653584" />
+      <property role="TrG5h" value="isInitial" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="AxPO7" id="4gRp4RJTCR">
     <property role="TrG5h" value="SIGNAL" />
@@ -125,9 +130,6 @@
     <property role="EcuMT" value="76804809440598588" />
     <property role="TrG5h" value="Action" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="4gRp4RJTCX" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
     <node concept="1TJgyi" id="4gRp4RJTCZ" role="1TKVEl">
       <property role="IQ2nx" value="76804809440598591" />
       <property role="TrG5h" value="signal" />
