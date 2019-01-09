@@ -191,11 +191,8 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
   }
   private EditorCell createRefNodeList_0() {
     AbstractCellListHandler handler = new State_EditorBuilder_a.actionsListHandler_sjqidp_b1a(myNode, getEditorContext());
-    EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_actions");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
@@ -213,7 +210,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137bf9a43L, "actions");
+      return MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x131d58101669f0d3L, "actions");
     }
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a3cL, "ArduinoML.structure.Action");
@@ -226,7 +223,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(actionsListHandler_sjqidp_b1a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137bf9a43L, "actions")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(actionsListHandler_sjqidp_b1a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x131d58101669f0d3L, "actions")));
       try {
         EditorCell emptyCell = null;
         emptyCell = createConstant_2();

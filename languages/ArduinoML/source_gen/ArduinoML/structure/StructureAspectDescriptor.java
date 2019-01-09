@@ -80,6 +80,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ArduinoML", "App", 0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure)/76804809440598563");
     b.version(2);
     b.aggregate("actuators", 0x110dd9137bf9a2bL).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a26L).optional(false).ordered(true).multiple(true).origin("76804809440598571").done();
@@ -94,7 +95,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("isInitial", 0x110dd9137c07110L).type(PrimitiveTypeId.BOOLEAN).origin("76804809440653584").done();
     b.associate("next", 0x110dd9137bf9a45L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L).optional(false).origin("76804809440598597").done();
-    b.aggregate("actions", 0x110dd9137bf9a43L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a3cL).optional(false).ordered(true).multiple(true).origin("76804809440598595").done();
+    b.aggregate("actions", 0x131d58101669f0d3L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a3cL).optional(false).ordered(true).multiple(true).origin("1377353887164002515").done();
     return b.create();
   }
 }

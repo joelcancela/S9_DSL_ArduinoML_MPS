@@ -10,9 +10,10 @@
       <concept id="76804809440598577" name="ArduinoML.structure.State" flags="ng" index="QFOuw">
         <property id="76804809440653584" name="isInitial" index="QOaM1" />
         <reference id="76804809440598597" name="next" index="QFOvk" />
-        <child id="76804809440598595" name="actions" index="QFOvi" />
+        <child id="1377353887164002515" name="actions" index="5taz3" />
       </concept>
       <concept id="76804809440598588" name="ArduinoML.structure.Action" flags="ng" index="QFOuH">
+        <property id="76804809440598591" name="signal" index="QFOuI" />
         <reference id="76804809440598593" name="target" index="QFOvg" />
       </concept>
       <concept id="76804809440598563" name="ArduinoML.structure.App" flags="ng" index="QFOuM">
@@ -29,25 +30,26 @@
       </concept>
     </language>
   </registry>
-  <node concept="QFOuM" id="4gRp4RKl9c">
+  <node concept="QFOuM" id="1ctm10mqylq">
     <property role="TrG5h" value="LED" />
-    <node concept="QFOuR" id="4gRp4RKl9d" role="QFOuU">
+    <node concept="QFOuR" id="1ctm10mqylr" role="QFOuU">
       <property role="TrG5h" value="theLed" />
       <property role="QFOuS" value="13" />
     </node>
-    <node concept="QFOuw" id="4gRp4RKl9e" role="QFOvp">
+    <node concept="QFOuw" id="1ctm10mqyls" role="QFOvp">
       <property role="TrG5h" value="on" />
-      <ref role="QFOvk" node="4gRp4RKl9n" resolve="off" />
-      <node concept="QFOuH" id="4gRp4RKl9k" role="QFOvi">
-        <ref role="QFOvg" node="4gRp4RKl9d" resolve="theLed" />
+      <ref role="QFOvk" node="1ctm10mqyly" resolve="off" />
+      <node concept="QFOuH" id="1ctm10mqL4A" role="5taz3">
+        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
       </node>
     </node>
-    <node concept="QFOuw" id="4gRp4RKl9n" role="QFOvp">
+    <node concept="QFOuw" id="1ctm10mqyly" role="QFOvp">
       <property role="TrG5h" value="off" />
       <property role="QOaM1" value="true" />
-      <ref role="QFOvk" node="4gRp4RKl9e" resolve="on" />
-      <node concept="QFOuH" id="4gRp4RKl9t" role="QFOvi">
-        <ref role="QFOvg" node="4gRp4RKl9d" resolve="theLed" />
+      <ref role="QFOvk" node="1ctm10mqyls" resolve="on" />
+      <node concept="QFOuH" id="1ctm10mqL4D" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
       </node>
     </node>
   </node>
