@@ -13,7 +13,6 @@
         <child id="76804809440598595" name="actions" index="QFOvi" />
       </concept>
       <concept id="76804809440598588" name="ArduinoML.structure.Action" flags="ng" index="QFOuH">
-        <property id="76804809440598591" name="signal" index="QFOuI" />
         <reference id="76804809440598593" name="target" index="QFOvg" />
       </concept>
       <concept id="76804809440598563" name="ArduinoML.structure.App" flags="ng" index="QFOuM">
@@ -30,26 +29,25 @@
       </concept>
     </language>
   </registry>
-  <node concept="QFOuM" id="4gRp4RK86l">
+  <node concept="QFOuM" id="4gRp4RKl9c">
     <property role="TrG5h" value="LED" />
-    <node concept="QFOuR" id="4gRp4RK86m" role="QFOuU">
+    <node concept="QFOuR" id="4gRp4RKl9d" role="QFOuU">
       <property role="TrG5h" value="theLed" />
       <property role="QFOuS" value="13" />
     </node>
-    <node concept="QFOuw" id="4gRp4RK86n" role="QFOvp">
-      <property role="TrG5h" value="off" />
-      <property role="QOaM1" value="true" />
-      <ref role="QFOvk" node="4gRp4RK86q" resolve="on" />
-      <node concept="QFOuH" id="4gRp4RK86o" role="QFOvi">
-        <property role="QFOuI" value="LOW" />
-        <ref role="QFOvg" node="4gRp4RK86m" resolve="theLed" />
+    <node concept="QFOuw" id="4gRp4RKl9e" role="QFOvp">
+      <property role="TrG5h" value="on" />
+      <ref role="QFOvk" node="4gRp4RKl9n" resolve="off" />
+      <node concept="QFOuH" id="4gRp4RKl9k" role="QFOvi">
+        <ref role="QFOvg" node="4gRp4RKl9d" resolve="theLed" />
       </node>
     </node>
-    <node concept="QFOuw" id="4gRp4RK86q" role="QFOvp">
-      <property role="TrG5h" value="on" />
-      <ref role="QFOvk" node="4gRp4RK86n" resolve="off" />
-      <node concept="QFOuH" id="4gRp4RK86r" role="QFOvi">
-        <ref role="QFOvg" node="4gRp4RK86m" resolve="theLed" />
+    <node concept="QFOuw" id="4gRp4RKl9n" role="QFOvp">
+      <property role="TrG5h" value="off" />
+      <property role="QOaM1" value="true" />
+      <ref role="QFOvk" node="4gRp4RKl9e" resolve="on" />
+      <node concept="QFOuH" id="4gRp4RKl9t" role="QFOvi">
+        <ref role="QFOvg" node="4gRp4RKl9d" resolve="theLed" />
       </node>
     </node>
   </node>
