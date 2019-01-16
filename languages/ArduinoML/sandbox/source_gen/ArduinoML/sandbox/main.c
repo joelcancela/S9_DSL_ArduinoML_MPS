@@ -2,34 +2,42 @@
 #include <util/delay.h>
 #include <Arduino.h>
 
-/** Generating code for applicationLED**/
+/** Generating code for applicationScenario1_VerySimpleAlarm **/
 
 // Declaring states function headers
-void state_on();
 void state_off();
+void state_on();
 
-// Declaring available actuators
+// Declaring available sensors & actuators
+int theButton=8;
 int theLed=9;
+int theBuzzer=10;
 
 // Declaring states
 
 
-void state_on()
-{
-  digitalWrite(theLed, HIGH);
-  state_off();
-}
-
 void state_off()
 {
+  digitalWrite(theBuzzer, LOW);
   digitalWrite(theLed, LOW);
+  _delay_ms(100);
   state_on();
+}
+
+void state_on()
+{
+  digitalWrite(theBuzzer, HIGH);
+  digitalWrite(theLed, HIGH);
+  _delay_ms(100);
+  state_off();
 }
 
 
 void setup()
 {
   pinMode(theLed, OUTPUT);
+  pinMode(theBuzzer, OUTPUT);
+  pinMode(theButton, INPUT);
 }
 
 int main(void)

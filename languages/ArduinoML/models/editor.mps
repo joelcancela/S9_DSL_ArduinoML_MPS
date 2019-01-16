@@ -63,7 +63,20 @@
         </node>
         <node concept="l2Vlx" id="4gRp4RK8jc" role="2iSdaV" />
       </node>
-      <node concept="35HoNQ" id="4gRp4RK8jz" role="3EZMnx" />
+      <node concept="35HoNQ" id="2ewsqTljYHz" role="3EZMnx" />
+      <node concept="3EZMnI" id="2ewsqTljBpI" role="3EZMnx">
+        <node concept="VPM3Z" id="2ewsqTljBpK" role="3F10Kt" />
+        <node concept="3XFhqQ" id="2ewsqTljBqg" role="3EZMnx" />
+        <node concept="3F2HdR" id="2ewsqTljBqq" role="3EZMnx">
+          <ref role="1NtTu8" to="9ma3:2ewsqTljhcO" resolve="sensors" />
+          <node concept="2iRkQZ" id="2ewsqTljBqt" role="2czzBx" />
+          <node concept="VPM3Z" id="2ewsqTljBqu" role="3F10Kt" />
+          <node concept="3F0ifn" id="2ewsqTljBqz" role="2czzBI">
+            <property role="3F0ifm" value="no sensors defined" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="2ewsqTljBpN" role="2iSdaV" />
+      </node>
       <node concept="3EZMnI" id="4gRp4RK8jN" role="3EZMnx">
         <node concept="VPM3Z" id="4gRp4RK8jP" role="3F10Kt" />
         <node concept="3XFhqQ" id="4gRp4RK8ka" role="3EZMnx" />
@@ -190,6 +203,28 @@
       </node>
       <node concept="35HoNQ" id="4gRp4RK8tV" role="3EZMnx" />
       <node concept="2iRkQZ" id="4gRp4RK8ou" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2ewsqTljPI6">
+    <ref role="1XX52x" to="9ma3:2ewsqTljbLB" resolve="Sensor" />
+    <node concept="3EZMnI" id="2ewsqTljPI8" role="2wV5jI">
+      <node concept="3EZMnI" id="2ewsqTljPIf" role="3EZMnx">
+        <node concept="VPM3Z" id="2ewsqTljPIh" role="3F10Kt" />
+        <node concept="3F0ifn" id="2ewsqTljPIq" role="3EZMnx">
+          <property role="3F0ifm" value="sensor" />
+        </node>
+        <node concept="3F0A7n" id="2ewsqTljPIw" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+        <node concept="3F0ifn" id="2ewsqTljPIC" role="3EZMnx">
+          <property role="3F0ifm" value="on pin" />
+        </node>
+        <node concept="3F0A7n" id="2ewsqTljPIM" role="3EZMnx">
+          <ref role="1NtTu8" to="9ma3:2ewsqTljbLE" resolve="pin" />
+        </node>
+        <node concept="l2Vlx" id="2ewsqTljPIk" role="2iSdaV" />
+      </node>
+      <node concept="2iRfu4" id="2ewsqTljPIb" role="2iSdaV" />
     </node>
   </node>
 </model>

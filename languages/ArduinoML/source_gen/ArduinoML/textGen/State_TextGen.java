@@ -35,6 +35,9 @@ public class State_TextGen extends TextGenDescriptorBase {
       }
     });
     tgs.indent();
+    tgs.append("_delay_ms(100);");
+    tgs.newLine();
+    tgs.indent();
     tgs.append("state_");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137bf9a45L, "next")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     tgs.append("();");
