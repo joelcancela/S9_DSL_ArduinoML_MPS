@@ -5,23 +5,27 @@
 /** Generating code for applicationLED**/
 
 // Declaring states function headers
-void state_on{};
-void state_off{};
+void state_on();
+void state_off();
 
 // Declaring available actuators
-int theLed=13;
+int theLed=9;
 
 // Declaring states
 
 
-void state_on(){
-digitalWrite();
-state_off();
+void state_on()
+{
+  digitalWrite(theLed, HIGH);
+  state_off();
 }
-void state_off(){
-digitalWrite();
-state_on();
+
+void state_off()
+{
+  digitalWrite(theLed, LOW);
+  state_on();
 }
+
 
 void setup()
 {

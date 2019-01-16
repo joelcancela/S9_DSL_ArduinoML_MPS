@@ -34,7 +34,7 @@
     <property role="TrG5h" value="LED" />
     <node concept="QFOuR" id="1ctm10mqylr" role="QFOuU">
       <property role="TrG5h" value="theLed" />
-      <property role="QFOuS" value="13" />
+      <property role="QFOuS" value="9" />
     </node>
     <node concept="QFOuw" id="1ctm10mqyls" role="QFOvp">
       <property role="TrG5h" value="on" />

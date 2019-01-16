@@ -2,14 +2,14 @@
 #include <util/delay.h>
 #include <Arduino.h>
 
-/** Generating code for applicationLED2**/
+/** Generating code for applicationLED**/
 
 // Declaring states function headers
 void state_on{};
 void state_off{};
 
 // Declaring available actuators
-intmyLed=13;
+int theLed=13;
 
 // Declaring states
 
@@ -25,7 +25,7 @@ state_on();
 
 void setup()
 {
-  pinMode(myLed, OUTPUT);
+  pinMode(theLed, OUTPUT);
 }
 
 int main(void)

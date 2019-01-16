@@ -1036,7 +1036,7 @@
             <node concept="liA8E" id="5D" role="2OqNvi">
               <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence):jetbrains.mps.text.TextArea" resolve="append" />
               <node concept="Xl_RD" id="5H" role="37wK5m">
-                <property role="Xl_RC" value="**/" />
+                <property role="Xl_RC" value=" **/" />
                 <node concept="cd27G" id="5J" role="lGtFl">
                   <node concept="3u3nmq" id="5K" role="cd27D">
                     <property role="3u3nmv" value="76804809441154775" />
@@ -1326,7 +1326,7 @@
                       <node concept="liA8E" id="7x" role="2OqNvi">
                         <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence):jetbrains.mps.text.TextArea" resolve="append" />
                         <node concept="Xl_RD" id="7_" role="37wK5m">
-                          <property role="Xl_RC" value="{};" />
+                          <property role="Xl_RC" value="();" />
                           <node concept="cd27G" id="7B" role="lGtFl">
                             <node concept="3u3nmq" id="7C" role="cd27D">
                               <property role="3u3nmv" value="76804809441193876" />

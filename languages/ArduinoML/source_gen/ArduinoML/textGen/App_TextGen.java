@@ -27,7 +27,7 @@ public class App_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.append("/** Generating code for application");
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    tgs.append("**/");
+    tgs.append(" **/");
     tgs.newLine();
     tgs.newLine();
     tgs.append("// Declaring states function headers");
@@ -36,7 +36,7 @@ public class App_TextGen extends TextGenDescriptorBase {
       public void visit(SNode it) {
         tgs.append("void state_");
         tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-        tgs.append("{};");
+        tgs.append("();");
         tgs.newLine();
       }
     });
