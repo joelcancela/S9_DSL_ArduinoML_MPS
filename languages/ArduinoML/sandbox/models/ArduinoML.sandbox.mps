@@ -92,5 +92,47 @@
       <property role="QFOuS" value="10" />
     </node>
   </node>
+  <node concept="QFOuM" id="2Czj7lqxPfI">
+    <property role="TrG5h" value="Scenario2_DualCheckAlarm" />
+    <node concept="1QVcR9" id="2Czj7lqxPfM" role="1QVmaq">
+      <property role="TrG5h" value="theButton" />
+      <property role="1QVcR4" value="8" />
+    </node>
+    <node concept="1QVcR9" id="2Czj7lqxP_f" role="1QVmaq">
+      <property role="TrG5h" value="theButton2" />
+      <property role="1QVcR4" value="11" />
+    </node>
+    <node concept="QFOuR" id="2Czj7lqxPfO" role="QFOuU">
+      <property role="TrG5h" value="theBuzzer" />
+      <property role="QFOuS" value="10" />
+    </node>
+    <node concept="QFOuw" id="2Czj7lqyx74" role="QFOvp">
+      <property role="TrG5h" value="on" />
+      <node concept="1KhCZ2" id="2Czj7lqyx7k" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lqxPfK" resolve="off" />
+      </node>
+      <node concept="QFOuH" id="2Czj7lqyx7d" role="5taz3">
+        <ref role="QFOvg" node="2Czj7lqxPfO" resolve="theBuzzer" />
+      </node>
+    </node>
+    <node concept="QFOuw" id="2Czj7lqxPfK" role="QFOvp">
+      <property role="QOaM1" value="true" />
+      <property role="TrG5h" value="off" />
+      <node concept="1KhCZ2" id="2Czj7lqxPfY" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lqqwX1" resolve="on" />
+        <node concept="1KjMQ3" id="2Czj7lqyx70" role="1KhCYZ">
+          <ref role="1KjMQc" node="2Czj7lqxP_f" resolve="theButton2" />
+        </node>
+        <node concept="1KjMQ3" id="2Czj7lqybqP" role="1KhCYZ">
+          <property role="1KjMQ2" value="HIGH" />
+          <ref role="1KjMQc" node="2Czj7lqxPfM" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lqxPfR" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="2ewsqTljbJD" resolve="theBuzzer" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -190,6 +190,7 @@
       <property role="IQ2ns" value="3036354640689349578" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="condition" />
+      <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="2Czj7lqr68Y" resolve="IAction" />
     </node>
   </node>

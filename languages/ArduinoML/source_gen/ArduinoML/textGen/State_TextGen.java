@@ -41,9 +41,28 @@ public class State_TextGen extends TextGenDescriptorBase {
     ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x2a234c755a6798bbL, "transitions"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         tgs.indent();
-        if (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition")) != null) {
+        if (SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition")).size() == 0) {
+          tgs.append("current_state = ");
+          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3beL, "state")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          tgs.append(";");
+          tgs.newLine();
+        }
+        if (SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition")).size() == 1) {
           tgs.append("if(");
-          tgs.appendNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition")));
+          tgs.appendNode(ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition"))).getElement(0));
+          tgs.append("){");
+          tgs.newLine();
+          tgs.append("current_state = ");
+          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3beL, "state")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          tgs.append(";");
+          tgs.newLine();
+          tgs.append("}");
+        }
+        if (SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition")).size() == 2) {
+          tgs.append("if(");
+          tgs.appendNode(ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition"))).getElement(0));
+          tgs.append(" && ");
+          tgs.appendNode(ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3caL, "condition"))).getElement(1));
           tgs.append("){");
           tgs.newLine();
           tgs.append("current_state = ");
