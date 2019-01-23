@@ -2,51 +2,55 @@
 #include <util/delay.h>
 #include <Arduino.h>
 
-/** Generating code for applicationScenario2_DualCheckAlarm **/
+/** Generating code for applicationScenario3_StateBaseAlarm **/
 
 // Declaring states function headers
-void state_on();
 void state_off();
+void state_on();
 
 // Declaring available sensors & actuators
 int theButton=8;
-int theButton2=11;
+int theLed=9;
 int theBuzzer=10;
 
 // Declaring states
-enum state{on,off}current_state = off;
+enum state{off,on}current_state = off;
 
-
-void state_on()
-{
-  digitalWrite(theBuzzer, HIGH);
-  _delay_ms(100);
-    }
 
 void state_off()
 {
   digitalWrite(theBuzzer, LOW);
+  digitalWrite(theLed, LOW);
   _delay_ms(100);
-    if(digitalRead(theButton2) == HIGH && digitalRead(theButton) == HIGH){
+    if(digitalRead(theButton) == HIGH){
 current_state = on;
+}}
+
+void state_on()
+{
+  digitalWrite(theBuzzer, HIGH);
+  digitalWrite(theLed, HIGH);
+  _delay_ms(100);
+    if(digitalRead(theButton) == HIGH){
+current_state = off;
 }}
 
 
 void setup()
 {
+  pinMode(theLed, OUTPUT);
   pinMode(theBuzzer, OUTPUT);
   pinMode(theButton, INPUT);
-  pinMode(theButton2, INPUT);
 }
 
 void loop()
 {
   switch(current_state){
-    case on:
-        state_on();
-        break;
     case off:
         state_off();
+        break;
+    case on:
+        state_on();
         break;
     default:
       break;

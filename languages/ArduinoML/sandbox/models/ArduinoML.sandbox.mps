@@ -134,5 +134,103 @@
       </node>
     </node>
   </node>
+  <node concept="QFOuM" id="2Czj7lq$OKB">
+    <property role="TrG5h" value="Scenario3_StateBaseAlarm" />
+    <node concept="1QVcR9" id="2Czj7lq$OKF" role="1QVmaq">
+      <property role="TrG5h" value="theButton" />
+      <property role="1QVcR4" value="8" />
+    </node>
+    <node concept="QFOuR" id="2Czj7lq$OKC" role="QFOuU">
+      <property role="TrG5h" value="theLed" />
+      <property role="QFOuS" value="9" />
+    </node>
+    <node concept="QFOuw" id="2Czj7lq$OKK" role="QFOvp">
+      <property role="TrG5h" value="off" />
+      <property role="QOaM1" value="true" />
+      <node concept="1KhCZ2" id="2Czj7lq$OL0" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lq$OKD" resolve="on" />
+        <node concept="1KjMQ3" id="2Czj7lq$OL2" role="1KhCYZ">
+          <ref role="1KjMQc" node="2ewsqTljUcv" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OKW" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
+      </node>
+    </node>
+    <node concept="QFOuw" id="2Czj7lq$OKD" role="QFOvp">
+      <property role="TrG5h" value="on" />
+      <node concept="1KhCZ2" id="2Czj7lq$OLa" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lq$OKK" resolve="off" />
+        <node concept="1KjMQ3" id="2Czj7lq$OLc" role="1KhCYZ">
+          <ref role="1KjMQc" node="2ewsqTljUcv" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OLe" role="5taz3">
+        <ref role="QFOvg" node="2Czj7lq$OKC" resolve="theLed" />
+      </node>
+    </node>
+  </node>
+  <node concept="QFOuM" id="2Czj7lq$OLl">
+    <property role="TrG5h" value="Scenario4_MultiStateAlarm" />
+    <node concept="1QVcR9" id="2Czj7lq$OLp" role="1QVmaq">
+      <property role="TrG5h" value="theButton" />
+      <property role="1QVcR4" value="8" />
+    </node>
+    <node concept="QFOuR" id="2Czj7lq$OLm" role="QFOuU">
+      <property role="TrG5h" value="theLed" />
+      <property role="QFOuS" value="9" />
+    </node>
+    <node concept="QFOuR" id="2Czj7lq$OLv" role="QFOuU">
+      <property role="TrG5h" value="theBuzzer" />
+      <property role="QFOuS" value="10" />
+    </node>
+    <node concept="QFOuw" id="2Czj7lq$OLA" role="QFOvp">
+      <property role="TrG5h" value="one" />
+      <property role="QOaM1" value="true" />
+      <node concept="1KhCZ2" id="2Czj7lq$OMc" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lq$OLS" resolve="two" />
+        <node concept="1KjMQ3" id="2Czj7lq$OMe" role="1KhCYZ">
+          <ref role="1KjMQc" node="2Czj7lq$OLp" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OM2" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="2Czj7lq$OLv" resolve="theBuzzer" />
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OM8" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="2Czj7lq$OLm" resolve="theLed" />
+      </node>
+    </node>
+    <node concept="QFOuw" id="2Czj7lq$OLS" role="QFOvp">
+      <property role="TrG5h" value="two" />
+      <node concept="1KhCZ2" id="2Czj7lq$OMg" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lq$OLK" resolve="three" />
+        <node concept="1KjMQ3" id="2Czj7lq$OMi" role="1KhCYZ">
+          <ref role="1KjMQc" node="2Czj7lq$OLp" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OMv" role="5taz3">
+        <ref role="QFOvg" node="2Czj7lq$OLv" resolve="theBuzzer" />
+      </node>
+    </node>
+    <node concept="QFOuw" id="2Czj7lq$OLK" role="QFOvp">
+      <property role="TrG5h" value="three" />
+      <node concept="1KhCZ2" id="2Czj7lq$OMk" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lq$OLA" resolve="one" />
+        <node concept="1KjMQ3" id="2Czj7lq$OMm" role="1KhCYZ">
+          <ref role="1KjMQc" node="2Czj7lq$OLp" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OMy" role="5taz3">
+        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
+      </node>
+      <node concept="QFOuH" id="2Czj7lq$OMI" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="2Czj7lq$OLv" resolve="theBuzzer" />
+      </node>
+    </node>
+  </node>
 </model>
 
