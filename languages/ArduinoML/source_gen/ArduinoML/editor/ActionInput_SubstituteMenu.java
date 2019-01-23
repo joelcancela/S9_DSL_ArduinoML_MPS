@@ -21,13 +21,13 @@ import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
-public class State_SubstituteMenu extends SubstituteMenuBase {
+public class ActionInput_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new State_SubstituteMenu.SMP_ReferenceScope_9xz71f_a(), MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, "ArduinoML.structure.State")));
-    result.add(new State_SubstituteMenu.SMP_Subconcepts_9xz71f_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ActionInput_SubstituteMenu.SMP_ReferenceScope_eo32ea_a(), MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a6c61f6L, "ArduinoML.structure.ActionInput")));
+    result.add(new ActionInput_SubstituteMenu.SMP_Subconcepts_eo32ea_b());
     return result;
   }
 
@@ -35,7 +35,7 @@ public class State_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for State. Generated from implicit smart reference attribute.", new SNodePointer("r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure)", "76804809440598577")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ActionInput. Generated from implicit smart reference attribute.", new SNodePointer("r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure)", "3036354640689783286")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -44,11 +44,11 @@ public class State_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public class SMP_ReferenceScope_9xz71f_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_eo32ea_a extends ReferenceScopeSubstituteMenuPart {
 
-    public SMP_ReferenceScope_9xz71f_a() {
+    public SMP_ReferenceScope_eo32ea_a() {
       // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
-      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, "ArduinoML.structure.State"), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137bf9a45L, "next"));
+      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a6c61f6L, "ArduinoML.structure.ActionInput"), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a6c61f6L, 0x2a234c755a6c61f9L, "target"));
     }
     @NotNull
     @Override
@@ -63,15 +63,15 @@ public class State_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public class SMP_Subconcepts_9xz71f_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_eo32ea_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, "ArduinoML.structure.State"));
+      return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a6c61f6L, "ArduinoML.structure.ActionInput"));
     }
     @NotNull
     @Override
     public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "State", null));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "ActionInput", null));
       try {
         return super.createItems(context);
       } finally {

@@ -68,6 +68,23 @@ public class App_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.append("// Declaring states");
     tgs.newLine();
+    tgs.append("enum state{");
+    ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states"))).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states"))).indexOf(it) != SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states")).size() - 1) {
+          tgs.append(",");
+        }
+      }
+    });
+    tgs.append("}current_state = ");
+    tgs.append(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states"))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137c07110L, "isInitial"));
+      }
+    }), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    tgs.append(";");
+    tgs.newLine();
     tgs.newLine();
     tgs.newLine();
     {
@@ -111,26 +128,46 @@ public class App_TextGen extends TextGenDescriptorBase {
     tgs.append("}");
     tgs.newLine();
     tgs.newLine();
-    tgs.append("int main(void)");
+    tgs.append("void loop()");
     tgs.newLine();
     tgs.append("{");
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
     tgs.indent();
-    tgs.append("setup();");
+    tgs.append("switch(current_state){");
     tgs.newLine();
-    tgs.indent();
-    tgs.append("state_");
-    tgs.append(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states"))).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137c07110L, "isInitial"));
+    ctx.getBuffer().area().increaseIndent();
+    ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states"))).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        tgs.indent();
+        tgs.append("case ");
+        tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        tgs.append(":");
+        tgs.newLine();
+        tgs.indent();
+        tgs.indent();
+        tgs.append("state_");
+        tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        tgs.append("();");
+        tgs.newLine();
+        tgs.indent();
+        tgs.indent();
+        tgs.append("break;");
+        tgs.newLine();
       }
-    }), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    tgs.append("();");
+    });
+    ctx.getBuffer().area().decreaseIndent();
+    tgs.indent();
+    tgs.indent();
+    tgs.append("default:");
     tgs.newLine();
     tgs.indent();
-    tgs.append("return 0;");
+    tgs.indent();
+    tgs.indent();
+    tgs.append("break;");
     tgs.newLine();
+    tgs.indent();
+    tgs.append("}");
     ctx.getBuffer().area().decreaseIndent();
     tgs.append("}");
   }

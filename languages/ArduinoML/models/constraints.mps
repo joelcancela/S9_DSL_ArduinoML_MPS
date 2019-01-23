@@ -50,17 +50,9 @@
       </concept>
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
-      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
-        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
-      </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="1213098023997" name="property" index="1MhHOB" />
-        <child id="1213100494875" name="referent" index="1Mr941" />
-      </concept>
-      <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
-        <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
-        <child id="1148687345559" name="searchScopeFactory" index="1N6uqs" />
       </concept>
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
@@ -185,12 +177,6 @@
   </node>
   <node concept="1M2fIO" id="4gRp4RLPsD">
     <ref role="1M2myG" to="9ma3:4gRp4RJTCL" resolve="State" />
-    <node concept="1N5Pfh" id="4gRp4RLPsE" role="1Mr941">
-      <ref role="1N5Vy1" to="9ma3:4gRp4RJTD5" resolve="next" />
-      <node concept="1dDu$B" id="4gRp4RLPsK" role="1N6uqs">
-        <ref role="1dDu$A" to="9ma3:4gRp4RJTCL" resolve="State" />
-      </node>
-    </node>
   </node>
 </model>
 

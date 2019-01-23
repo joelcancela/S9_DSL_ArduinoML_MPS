@@ -10,10 +10,13 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Action;
+  private ConceptPresentation props_ActionInput;
   private ConceptPresentation props_Actuator;
   private ConceptPresentation props_App;
+  private ConceptPresentation props_IAction;
   private ConceptPresentation props_Sensor;
   private ConceptPresentation props_State;
+  private ConceptPresentation props_Transition;
 
   @Override
   @Nullable
@@ -27,6 +30,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Action = cpb.create();
         }
         return props_Action;
+      case LanguageConceptSwitch.ActionInput:
+        if (props_ActionInput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a6c61f6L, 0x2a234c755a6c61f9L, "target", "", "");
+          props_ActionInput = cpb.create();
+        }
+        return props_ActionInput;
       case LanguageConceptSwitch.Actuator:
         if (props_Actuator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -41,6 +51,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_App = cpb.create();
         }
         return props_App;
+      case LanguageConceptSwitch.IAction:
+        if (props_IAction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IAction = cpb.create();
+        }
+        return props_IAction;
       case LanguageConceptSwitch.Sensor:
         if (props_Sensor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -55,6 +71,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_State = cpb.create();
         }
         return props_State;
+      case LanguageConceptSwitch.Transition:
+        if (props_Transition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a65c3b7L, 0x2a234c755a65c3beL, "state", "", "");
+          props_Transition = cpb.create();
+        }
+        return props_Transition;
     }
     return null;
   }

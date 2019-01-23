@@ -9,8 +9,8 @@
     <language id="099409c0-0ced-4933-b9e3-928d0c704016" name="ArduinoML">
       <concept id="76804809440598577" name="ArduinoML.structure.State" flags="ng" index="QFOuw">
         <property id="76804809440653584" name="isInitial" index="QOaM1" />
-        <reference id="76804809440598597" name="next" index="QFOvk" />
         <child id="1377353887164002515" name="actions" index="5taz3" />
+        <child id="3036354640689469627" name="transitions" index="1Khdje" />
       </concept>
       <concept id="76804809440598588" name="ArduinoML.structure.Action" flags="ng" index="QFOuH">
         <property id="76804809440598591" name="signal" index="QFOuI" />
@@ -24,6 +24,14 @@
       <concept id="76804809440598566" name="ArduinoML.structure.Actuator" flags="ng" index="QFOuR">
         <property id="76804809440598569" name="pin" index="QFOuS" />
       </concept>
+      <concept id="3036354640689349559" name="ArduinoML.structure.Transition" flags="ng" index="1KhCZ2">
+        <reference id="3036354640689349566" name="state" index="1KhCZb" />
+        <child id="3036354640689349578" name="condition" index="1KhCYZ" />
+      </concept>
+      <concept id="3036354640689783286" name="ArduinoML.structure.ActionInput" flags="ng" index="1KjMQ3">
+        <property id="3036354640689783287" name="signal" index="1KjMQ2" />
+        <reference id="3036354640689783289" name="target" index="1KjMQc" />
+      </concept>
       <concept id="2567176781170523239" name="ArduinoML.structure.Sensor" flags="ng" index="1QVcR9">
         <property id="2567176781170523242" name="pin" index="1QVcR4" />
       </concept>
@@ -36,6 +44,41 @@
   </registry>
   <node concept="QFOuM" id="1ctm10mqylq">
     <property role="TrG5h" value="Scenario1_VerySimpleAlarm" />
+    <node concept="QFOuw" id="2Czj7lqqwWS" role="QFOvp">
+      <property role="TrG5h" value="off" />
+      <property role="QOaM1" value="true" />
+      <node concept="1KhCZ2" id="2Czj7lqrZNa" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lqqwX1" resolve="on" />
+        <node concept="1KjMQ3" id="2Czj7lqrZNd" role="1KhCYZ">
+          <ref role="1KjMQc" node="2ewsqTljUcv" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lqqwWW" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="2ewsqTljbJD" resolve="theBuzzer" />
+      </node>
+      <node concept="QFOuH" id="2Czj7lqqOrr" role="5taz3">
+        <property role="QFOuI" value="LOW" />
+        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
+      </node>
+    </node>
+    <node concept="QFOuw" id="2Czj7lqqwX1" role="QFOvp">
+      <property role="TrG5h" value="on" />
+      <node concept="1KhCZ2" id="2Czj7lqrZNo" role="1Khdje">
+        <ref role="1KhCZb" node="2Czj7lqqwWS" resolve="off" />
+        <node concept="1KjMQ3" id="2Czj7lqrZNq" role="1KhCYZ">
+          <property role="1KjMQ2" value="LOW" />
+          <ref role="1KjMQc" node="2ewsqTljUcv" resolve="theButton" />
+        </node>
+      </node>
+      <node concept="QFOuH" id="2Czj7lqqwX8" role="5taz3">
+        <property role="QFOuI" value="HIGH" />
+        <ref role="QFOvg" node="2ewsqTljbJD" resolve="theBuzzer" />
+      </node>
+      <node concept="QFOuH" id="2Czj7lqrZNk" role="5taz3">
+        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
+      </node>
+    </node>
     <node concept="1QVcR9" id="2ewsqTljUcv" role="1QVmaq">
       <property role="TrG5h" value="theButton" />
       <property role="1QVcR4" value="8" />
@@ -47,30 +90,6 @@
     <node concept="QFOuR" id="2ewsqTljbJD" role="QFOuU">
       <property role="TrG5h" value="theBuzzer" />
       <property role="QFOuS" value="10" />
-    </node>
-    <node concept="QFOuw" id="1ctm10mqyly" role="QFOvp">
-      <property role="TrG5h" value="off" />
-      <property role="QOaM1" value="true" />
-      <ref role="QFOvk" node="1ctm10mqyls" resolve="on" />
-      <node concept="QFOuH" id="2ewsqTljbKt" role="5taz3">
-        <property role="QFOuI" value="LOW" />
-        <ref role="QFOvg" node="2ewsqTljbJD" resolve="theBuzzer" />
-      </node>
-      <node concept="QFOuH" id="2ewsqTljbKz" role="5taz3">
-        <property role="QFOuI" value="LOW" />
-        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
-      </node>
-    </node>
-    <node concept="QFOuw" id="1ctm10mqyls" role="QFOvp">
-      <property role="TrG5h" value="on" />
-      <ref role="QFOvk" node="1ctm10mqyly" resolve="off" />
-      <node concept="QFOuH" id="2ewsqTljbKj" role="5taz3">
-        <ref role="QFOvg" node="2ewsqTljbJD" resolve="theBuzzer" />
-      </node>
-      <node concept="QFOuH" id="1ctm10mqL4A" role="5taz3">
-        <property role="QFOuI" value="HIGH" />
-        <ref role="QFOvg" node="1ctm10mqylr" resolve="theLed" />
-      </node>
     </node>
   </node>
 </model>

@@ -24,6 +24,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -103,13 +104,6 @@
     <node concept="PrWs8" id="4gRp4RJTCM" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="4gRp4RJTD5" role="1TKVEi">
-      <property role="IQ2ns" value="76804809440598597" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="next" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="4gRp4RJTCL" resolve="State" />
-    </node>
     <node concept="1TJgyi" id="4gRp4RK74g" role="1TKVEl">
       <property role="IQ2nx" value="76804809440653584" />
       <property role="TrG5h" value="isInitial" />
@@ -121,6 +115,13 @@
       <property role="20kJfa" value="actions" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="4gRp4RJTCW" resolve="Action" />
+    </node>
+    <node concept="1TJgyj" id="2Czj7lqpTyV" role="1TKVEi">
+      <property role="IQ2ns" value="3036354640689469627" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="transitions" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2Czj7lqpseR" resolve="Transition" />
     </node>
   </node>
   <node concept="AxPO7" id="4gRp4RJTCR">
@@ -152,6 +153,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="4gRp4RJTCA" resolve="Actuator" />
     </node>
+    <node concept="PrWs8" id="2Czj7lqr691" role="PzmwI">
+      <ref role="PrY4T" node="2Czj7lqr68Y" resolve="IAction" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2ewsqTljbLB">
     <property role="EcuMT" value="2567176781170523239" />
@@ -170,6 +174,48 @@
       <property role="TrG5h" value="status" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="2Czj7lqpseR">
+    <property role="EcuMT" value="3036354640689349559" />
+    <property role="TrG5h" value="Transition" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2Czj7lqpseY" role="1TKVEi">
+      <property role="IQ2ns" value="3036354640689349566" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="state" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4gRp4RJTCL" resolve="State" />
+    </node>
+    <node concept="1TJgyj" id="2Czj7lqpsfa" role="1TKVEi">
+      <property role="IQ2ns" value="3036354640689349578" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="condition" />
+      <ref role="20lvS9" node="2Czj7lqr68Y" resolve="IAction" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2Czj7lqr67Q">
+    <property role="EcuMT" value="3036354640689783286" />
+    <property role="TrG5h" value="ActionInput" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2Czj7lqr67R" role="1TKVEl">
+      <property role="IQ2nx" value="3036354640689783287" />
+      <property role="TrG5h" value="signal" />
+      <ref role="AX2Wp" node="4gRp4RJTCR" resolve="SIGNAL" />
+    </node>
+    <node concept="1TJgyj" id="2Czj7lqr67T" role="1TKVEi">
+      <property role="IQ2ns" value="3036354640689783289" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2ewsqTljbLB" resolve="Sensor" />
+    </node>
+    <node concept="PrWs8" id="2Czj7lqr68Z" role="PzmwI">
+      <ref role="PrY4T" node="2Czj7lqr68Y" resolve="IAction" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="2Czj7lqr68Y">
+    <property role="EcuMT" value="3036354640689783358" />
+    <property role="TrG5h" value="IAction" />
   </node>
 </model>
 

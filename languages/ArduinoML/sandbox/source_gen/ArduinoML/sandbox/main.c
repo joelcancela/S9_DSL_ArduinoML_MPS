@@ -14,6 +14,7 @@ int theLed=9;
 int theBuzzer=10;
 
 // Declaring states
+enum state{off,on}current_state = off;
 
 
 void state_off()
@@ -21,16 +22,18 @@ void state_off()
   digitalWrite(theBuzzer, LOW);
   digitalWrite(theLed, LOW);
   _delay_ms(100);
-  state_on();
-}
+    if(digitalRead(theButton) == HIGH){
+current_state = on;
+}}
 
 void state_on()
 {
   digitalWrite(theBuzzer, HIGH);
   digitalWrite(theLed, HIGH);
   _delay_ms(100);
-  state_off();
-}
+    if(digitalRead(theButton) == LOW){
+current_state = off;
+}}
 
 
 void setup()
@@ -40,9 +43,15 @@ void setup()
   pinMode(theButton, INPUT);
 }
 
-int main(void)
+void loop()
 {
-  setup();
-  state_off();
-  return 0;
-}
+  switch(current_state){
+    off:
+        state_off();
+        break;
+    on:
+        state_on();
+        break;
+    default:
+      break;
+  }}

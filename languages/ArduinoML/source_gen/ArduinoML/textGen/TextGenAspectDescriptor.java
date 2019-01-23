@@ -22,6 +22,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
+      case LanguageConceptSwitch.ActionInput:
+        return new ActionInput_TextGen();
       case LanguageConceptSwitch.Actuator:
         return new Actuator_TextGen();
       case LanguageConceptSwitch.App:
