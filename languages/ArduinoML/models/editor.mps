@@ -200,6 +200,9 @@
           <node concept="3F2HdR" id="2Czj7lqqcI9" role="3EZMnx">
             <ref role="1NtTu8" to="9ma3:2Czj7lqpTyV" resolve="transitions" />
             <node concept="2iRkQZ" id="2Czj7lqqcIb" role="2czzBx" />
+            <node concept="3F0ifn" id="33IURvaN17q" role="2czzBI">
+              <property role="3F0ifm" value="no transitions defined" />
+            </node>
           </node>
           <node concept="2iRkQZ" id="2Czj7lqqcI3" role="2iSdaV" />
         </node>

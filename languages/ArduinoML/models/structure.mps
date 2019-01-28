@@ -177,11 +177,6 @@
       <property role="TrG5h" value="pin" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="2ewsqTllpio" role="1TKVEl">
-      <property role="IQ2nx" value="2567176781171102872" />
-      <property role="TrG5h" value="status" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2Czj7lqpseR">
     <property role="EcuMT" value="3036354640689349559" />

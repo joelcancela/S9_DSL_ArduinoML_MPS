@@ -374,7 +374,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(transitionsListHandler_sjqidp_a1c0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x2a234c755a6798bbL, "transitions")));
       try {
         EditorCell emptyCell = null;
-        emptyCell = super.createEmptyCell();
+        emptyCell = createConstant_4();
         installElementCellActions(null, emptyCell, true);
         setCellContext(emptyCell);
         return emptyCell;
@@ -393,6 +393,12 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
           elementCell.setSubstituteInfo((isEmptyCell ? new SEmptyContainmentSubstituteInfo(elementCell) : new SChildSubstituteInfo(elementCell)));
         }
       }
+    }
+    private EditorCell createConstant_4() {
+      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "no transitions defined");
+      editorCell.setCellId("Constant_sjqidp_a0b2a");
+      editorCell.setDefaultText("");
+      return editorCell;
     }
   }
   private EditorCell createEmpty_0() {

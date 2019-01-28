@@ -1695,8 +1695,8 @@
       <node id="76804809440658947" at="372,41,373,41" concept="1" />
       <node id="76804809440658947" at="373,41,374,263" concept="1" />
       <node id="76804809440658947" at="375,11,376,36" concept="5" />
-      <node id="76804809440658947" at="376,36,377,44" concept="1" />
-      <node id="76804809440658947" at="377,44,378,57" concept="1" />
+      <node id="76804809440658947" at="376,36,377,39" concept="1" />
+      <node id="76804809440658947" at="377,39,378,57" concept="1" />
       <node id="76804809440658947" at="378,57,379,34" concept="1" />
       <node id="76804809440658947" at="379,34,380,25" concept="6" />
       <node id="76804809440658947" at="381,17,382,42" concept="1" />
@@ -1704,11 +1704,15 @@
       <node id="76804809440658947" at="388,34,389,142" concept="1" />
       <node id="76804809440658947" at="389,142,390,146" concept="1" />
       <node id="76804809440658947" at="392,122,393,146" concept="1" />
-      <node id="76804809440659323" at="398,38,399,83" concept="5" />
-      <node id="76804809440659323" at="399,83,400,145" concept="1" />
-      <node id="76804809440659323" at="400,145,401,149" concept="1" />
-      <node id="76804809440659323" at="401,149,402,44" concept="1" />
-      <node id="76804809440659323" at="402,44,403,22" concept="6" />
+      <node id="3526014458013684186" at="397,43,398,117" concept="5" />
+      <node id="3526014458013684186" at="398,117,399,52" concept="1" />
+      <node id="3526014458013684186" at="399,52,400,36" concept="1" />
+      <node id="3526014458013684186" at="400,36,401,24" concept="6" />
+      <node id="76804809440659323" at="404,38,405,83" concept="5" />
+      <node id="76804809440659323" at="405,83,406,145" concept="1" />
+      <node id="76804809440659323" at="406,145,407,149" concept="1" />
+      <node id="76804809440659323" at="407,149,408,44" concept="1" />
+      <node id="76804809440659323" at="408,44,409,22" concept="6" />
       <node id="76804809440658947" at="49,0,51,0" concept="2" trace="myNode" />
       <node id="76804809440658947" at="189,0,191,0" concept="2" trace="myNode" />
       <node id="76804809440658947" at="261,0,263,0" concept="2" trace="myNode" />
@@ -1752,10 +1756,11 @@
       <node id="76804809440659045" at="141,0,147,0" concept="4" trace="createConstant_1#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="8520046879477759882" at="178,0,184,0" concept="4" trace="createConstant_2#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1377353887164017080" at="310,0,316,0" concept="4" trace="createConstant_3#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="3526014458013684186" at="397,0,403,0" concept="4" trace="createConstant_4#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="76804809440658947" at="203,0,210,0" concept="4" trace="createChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="76804809440658947" at="253,0,260,0" concept="4" trace="createRefNodeList_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="76804809440658947" at="340,0,347,0" concept="4" trace="createRefNodeList_1#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="76804809440659323" at="398,0,405,0" concept="4" trace="createEmpty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="76804809440659323" at="404,0,411,0" concept="4" trace="createEmpty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="76804809440658947" at="213,0,221,0" concept="4" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Z)V" />
       <node id="76804809440658947" at="224,218,233,7" concept="9" />
       <node id="76804809440658947" at="287,254,296,7" concept="9" />
@@ -1886,6 +1891,9 @@
         <var name="ownerNode" id="76804809440658947" />
       </scope>
       <scope id="76804809440658947" at="356,0,360,0" />
+      <scope id="3526014458013684186" at="397,43,401,24">
+        <var name="editorCell" id="3526014458013684186" />
+      </scope>
       <scope id="76804809440658947" at="57,0,62,0" />
       <scope id="76804809440658947" at="197,0,202,0" />
       <scope id="76804809440658947" at="203,55,208,24">
@@ -1914,7 +1922,7 @@
       <scope id="76804809440658947" at="375,11,380,25">
         <var name="emptyCell" id="76804809440658947" />
       </scope>
-      <scope id="76804809440659323" at="398,38,403,22">
+      <scope id="76804809440659323" at="404,38,409,22">
         <var name="editorCell" id="76804809440659323" />
       </scope>
       <scope id="76804809440658995" at="123,0,129,0" />
@@ -1922,6 +1930,7 @@
       <scope id="8520046879477759882" at="178,0,184,0" />
       <scope id="76804809440658947" at="213,87,219,7" />
       <scope id="1377353887164017080" at="310,0,316,0" />
+      <scope id="3526014458013684186" at="397,0,403,0" />
       <scope id="76804809440658947" at="203,0,210,0">
         <var name="child" id="76804809440658947" />
       </scope>
@@ -1931,7 +1940,7 @@
         <var name="style" id="76804809440658947" />
       </scope>
       <scope id="76804809440658947" at="340,0,347,0" />
-      <scope id="76804809440659323" at="398,0,405,0" />
+      <scope id="76804809440659323" at="404,0,411,0" />
       <scope id="76804809440658947" at="213,0,221,0">
         <var name="child" id="76804809440658947" />
         <var name="editorCell" id="76804809440658947" />
@@ -1996,9 +2005,9 @@
       <unit id="76804809440658989" at="109,102,113,7" name="ArduinoML.editor.State_EditorBuilder_a$1" />
       <unit id="76804809440659061" at="160,102,164,7" name="ArduinoML.editor.State_EditorBuilder_a$2" />
       <unit id="76804809440658947" at="188,0,239,0" name="ArduinoML.editor.State_EditorBuilder_a$soundsSingleRoleHandler_sjqidp_j0a" />
-      <unit id="76804809440658947" at="347,0,398,0" name="ArduinoML.editor.State_EditorBuilder_a$transitionsListHandler_sjqidp_a1c0" />
       <unit id="76804809440658947" at="260,0,317,0" name="ArduinoML.editor.State_EditorBuilder_a$actionsListHandler_sjqidp_b1a" />
-      <unit id="76804809440658947" at="48,0,406,0" name="ArduinoML.editor.State_EditorBuilder_a" />
+      <unit id="76804809440658947" at="347,0,404,0" name="ArduinoML.editor.State_EditorBuilder_a$transitionsListHandler_sjqidp_a1c0" />
+      <unit id="76804809440658947" at="48,0,412,0" name="ArduinoML.editor.State_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:80af52ab-ce3a-410f-9260-5884f4929d65(ArduinoML.editor)/8520046879477226454">
