@@ -43,6 +43,7 @@
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
+      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
@@ -171,6 +172,13 @@
           <ref role="1NtTu8" to="9ma3:4gRp4RK74g" resolve="isInitial" />
         </node>
         <node concept="l2Vlx" id="4gRp4RK8oB" role="2iSdaV" />
+        <node concept="3XFhqQ" id="7oXinVCU_J$" role="3EZMnx" />
+        <node concept="3F0ifn" id="7oXinVCWBYa" role="3EZMnx">
+          <property role="3F0ifm" value="sounds:" />
+        </node>
+        <node concept="3F1sOY" id="7oXinVCWBYw" role="3EZMnx">
+          <ref role="1NtTu8" to="9ma3:7oXinVCU_J7" resolve="sounds" />
+        </node>
       </node>
       <node concept="3EZMnI" id="4gRp4RK8qG" role="3EZMnx">
         <node concept="VPM3Z" id="4gRp4RK8qI" role="3F10Kt" />
@@ -271,6 +279,37 @@
         <ref role="1NtTu8" to="9ma3:2Czj7lqr67R" resolve="signal" />
       </node>
       <node concept="2iRfu4" id="2Czj7lqr688" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7oXinVCU_Jm">
+    <ref role="1XX52x" to="9ma3:7oXinVCU_Jb" resolve="SoundType" />
+    <node concept="3F0A7n" id="7oXinVCU_Jo" role="2wV5jI">
+      <ref role="1NtTu8" to="9ma3:7oXinVCU_Jc" resolve="sound" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7oXinVCUV1T">
+    <ref role="1XX52x" to="9ma3:7oXinVCUV1F" resolve="SignalHandler" />
+    <node concept="3EZMnI" id="7oXinVCWiM7" role="2wV5jI">
+      <node concept="l2Vlx" id="7oXinVCWiM8" role="2iSdaV" />
+      <node concept="1iCGBv" id="7oXinVCWiMb" role="3EZMnx">
+        <ref role="1NtTu8" to="9ma3:7oXinVCUV1G" resolve="actuator" />
+        <node concept="1sVBvm" id="7oXinVCWiMc" role="1sWHZn">
+          <node concept="3F0A7n" id="7oXinVCWiMh" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7oXinVCWiMx" role="3EZMnx">
+        <property role="3F0ifm" value="makes" />
+      </node>
+      <node concept="3F2HdR" id="7oXinVCWiMH" role="3EZMnx">
+        <ref role="1NtTu8" to="9ma3:7oXinVCUV1I" resolve="soundTypes" />
+        <node concept="l2Vlx" id="7oXinVCWiMJ" role="2czzBx" />
+        <node concept="3F0ifn" id="7oXinVCWiMQ" role="2czzBI">
+          <property role="3F0ifm" value="no entry sounds defined" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

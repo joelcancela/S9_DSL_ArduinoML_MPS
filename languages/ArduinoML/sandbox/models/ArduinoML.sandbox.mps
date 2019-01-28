@@ -7,9 +7,17 @@
   <imports />
   <registry>
     <language id="099409c0-0ced-4933-b9e3-928d0c704016" name="ArduinoML">
+      <concept id="8520046879477313643" name="ArduinoML.structure.SignalHandler" flags="ng" index="2uPJ$l">
+        <reference id="8520046879477313644" name="actuator" index="2uPJ$i" />
+        <child id="8520046879477313646" name="soundTypes" index="2uPJ$g" />
+      </concept>
+      <concept id="8520046879477226443" name="ArduinoML.structure.SoundType" flags="ng" index="2uPLaP">
+        <property id="8520046879477226444" name="sound" index="2uPLaM" />
+      </concept>
       <concept id="76804809440598577" name="ArduinoML.structure.State" flags="ng" index="QFOuw">
         <property id="76804809440653584" name="isInitial" index="QOaM1" />
         <child id="1377353887164002515" name="actions" index="5taz3" />
+        <child id="8520046879477226439" name="sounds" index="2uPLaT" />
         <child id="3036354640689469627" name="transitions" index="1Khdje" />
       </concept>
       <concept id="76804809440598588" name="ArduinoML.structure.Action" flags="ng" index="QFOuH">
@@ -229,6 +237,58 @@
       <node concept="QFOuH" id="2Czj7lq$OMI" role="5taz3">
         <property role="QFOuI" value="LOW" />
         <ref role="QFOvg" node="2Czj7lq$OLv" resolve="theBuzzer" />
+      </node>
+    </node>
+  </node>
+  <node concept="QFOuM" id="7oXinVCUv87">
+    <property role="TrG5h" value="Extension: Signaling stuff" />
+    <node concept="1QVcR9" id="7oXinVCUv8b" role="1QVmaq">
+      <property role="TrG5h" value="theButton1" />
+      <property role="1QVcR4" value="8" />
+    </node>
+    <node concept="1QVcR9" id="7oXinVCUV1s" role="1QVmaq">
+      <property role="TrG5h" value="theButton2" />
+      <property role="1QVcR4" value="9" />
+    </node>
+    <node concept="QFOuR" id="7oXinVCUv88" role="QFOuU">
+      <property role="TrG5h" value="theBuzzer3" />
+      <property role="QFOuS" value="10" />
+    </node>
+    <node concept="QFOuw" id="7oXinVCUv89" role="QFOvp">
+      <property role="TrG5h" value="s1" />
+      <property role="QOaM1" value="true" />
+      <node concept="1KhCZ2" id="7oXinVCX53_" role="1Khdje">
+        <ref role="1KhCZb" node="7oXinVCUV1g" resolve="s2" />
+        <node concept="1KjMQ3" id="7oXinVCX53B" role="1KhCYZ">
+          <ref role="1KjMQc" node="7oXinVCUv8b" resolve="theButton1" />
+        </node>
+      </node>
+      <node concept="2uPJ$l" id="7oXinVCVXB8" role="2uPLaT">
+        <ref role="2uPJ$i" node="7oXinVCUv88" resolve="theBuzzer3" />
+        <node concept="2uPLaP" id="7oXinVCVXBc" role="2uPJ$g">
+          <property role="2uPLaM" value="shortBeep();" />
+        </node>
+        <node concept="2uPLaP" id="7oXinVCX53b" role="2uPJ$g">
+          <property role="2uPLaM" value="shortBeep();" />
+        </node>
+        <node concept="2uPLaP" id="7oXinVCX53e" role="2uPJ$g">
+          <property role="2uPLaM" value="shortBeep();" />
+        </node>
+      </node>
+    </node>
+    <node concept="QFOuw" id="7oXinVCUV1g" role="QFOvp">
+      <property role="TrG5h" value="s2" />
+      <node concept="2uPJ$l" id="7oXinVCX53i" role="2uPLaT">
+        <ref role="2uPJ$i" node="7oXinVCUv88" resolve="theBuzzer3" />
+        <node concept="2uPLaP" id="7oXinVCX53k" role="2uPJ$g">
+          <property role="2uPLaM" value="longBeep();" />
+        </node>
+      </node>
+      <node concept="1KhCZ2" id="7oXinVCX53D" role="1Khdje">
+        <ref role="1KhCZb" node="7oXinVCUv89" resolve="s1" />
+        <node concept="1KjMQ3" id="7oXinVCX53F" role="1KhCYZ">
+          <ref role="1KjMQc" node="7oXinVCUV1s" resolve="theButton2" />
+        </node>
       </node>
     </node>
   </node>

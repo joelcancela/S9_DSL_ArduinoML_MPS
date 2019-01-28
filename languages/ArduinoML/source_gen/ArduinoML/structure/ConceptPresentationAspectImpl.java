@@ -15,6 +15,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_App;
   private ConceptPresentation props_IAction;
   private ConceptPresentation props_Sensor;
+  private ConceptPresentation props_SignalHandler;
+  private ConceptPresentation props_SoundType;
   private ConceptPresentation props_State;
   private ConceptPresentation props_Transition;
 
@@ -64,6 +66,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Sensor = cpb.create();
         }
         return props_Sensor;
+      case LanguageConceptSwitch.SignalHandler:
+        if (props_SignalHandler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x763d497ee8ebb06bL, 0x763d497ee8ebb06cL, "actuator", "", "");
+          props_SignalHandler = cpb.create();
+        }
+        return props_SignalHandler;
+      case LanguageConceptSwitch.SoundType:
+        if (props_SoundType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SoundType");
+          props_SoundType = cpb.create();
+        }
+        return props_SoundType;
       case LanguageConceptSwitch.State:
         if (props_State == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
