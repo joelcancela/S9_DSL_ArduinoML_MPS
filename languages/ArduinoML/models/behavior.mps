@@ -119,7 +119,7 @@
                 <node concept="13iPFW" id="4gRp4RLQs0" role="37wK5m" />
                 <node concept="359W_D" id="4gRp4RLQFb" role="37wK5m">
                   <ref role="359W_E" to="9ma3:4gRp4RJTCz" resolve="App" />
-                  <ref role="359W_F" to="9ma3:4gRp4RJTD8" resolve="states" />
+                  <ref role="359W_F" to="9ma3:4gRp4RJTD8" resolve="modes" />
                 </node>
               </node>
             </node>

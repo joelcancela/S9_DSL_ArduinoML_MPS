@@ -34,21 +34,21 @@ void longBeep(){
 
 void resetPass(int index){
   for(int i=0; i<2;i++)
-{
-  firstPass[i] = true;
-}
+  {
+    firstPass[i] = true;
+  }
   firstPass[index] = false;
 }
 
 void state_s1()
 {
   if(firstPass[s1]){
-  shortBeep();
-  shortBeep();
-  shortBeep();
-  resetPass(s1);
+    shortBeep();
+    shortBeep();
+    shortBeep();
+    resetPass(s1);
   }
-boolean guard = millis() - time > debounce;
+  boolean guard = millis() - time > debounce;
   if(digitalRead(theButton1) == HIGH && guard){
     time = millis();
     current_state = s2;
@@ -58,10 +58,10 @@ boolean guard = millis() - time > debounce;
 void state_s2()
 {
   if(firstPass[s2]){
-  longBeep();
-  resetPass(s2);
+    longBeep();
+    resetPass(s2);
   }
-boolean guard = millis() - time > debounce;
+  boolean guard = millis() - time > debounce;
   if(digitalRead(theButton2) == HIGH && guard){
     time = millis();
     current_state = s1;

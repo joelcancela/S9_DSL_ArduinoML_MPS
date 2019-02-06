@@ -14,11 +14,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Actuator;
   private ConceptPresentation props_App;
   private ConceptPresentation props_IAction;
+  private ConceptPresentation props_Mode;
   private ConceptPresentation props_Sensor;
   private ConceptPresentation props_SignalHandler;
   private ConceptPresentation props_SoundType;
   private ConceptPresentation props_State;
   private ConceptPresentation props_Transition;
+  private ConceptPresentation props_TransitionMode;
 
   @Override
   @Nullable
@@ -59,6 +61,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IAction = cpb.create();
         }
         return props_IAction;
+      case LanguageConceptSwitch.Mode:
+        if (props_Mode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Mode = cpb.create();
+        }
+        return props_Mode;
       case LanguageConceptSwitch.Sensor:
         if (props_Sensor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -94,6 +103,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Transition = cpb.create();
         }
         return props_Transition;
+      case LanguageConceptSwitch.TransitionMode:
+        if (props_TransitionMode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b3a6L, 0x5b1db7306c8ad401L, "mode", "", "");
+          props_TransitionMode = cpb.create();
+        }
+        return props_TransitionMode;
     }
     return null;
   }

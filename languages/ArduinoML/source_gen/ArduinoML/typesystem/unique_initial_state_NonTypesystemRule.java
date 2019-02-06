@@ -22,7 +22,7 @@ public class unique_initial_state_NonTypesystemRule extends AbstractNonTypesyste
   public unique_initial_state_NonTypesystemRule() {
   }
   public void applyRule(final SNode app, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.fromList(SLinkOperations.getChildren(app, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "states"))).where(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SLinkOperations.getChildren(app, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode s) {
         return Objects.equals(SPropertyOperations.getBoolean(s, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137c07110L, "isInitial")), true);
       }
