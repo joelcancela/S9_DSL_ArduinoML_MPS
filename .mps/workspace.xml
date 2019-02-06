@@ -6,40 +6,7 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7401ace-bb99-416f-a09f-a2a4c8ff6b39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/constraints/State_Constraints$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/constraints/State_Constraints$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/App_EditorBuilder_a$actuatorsListHandler_g38wqt_b2a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/App_EditorBuilder_a$sensorsListHandler_g38wqt_b1a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/App_EditorBuilder_a$statesListHandler_g38wqt_b4a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/App_EditorBuilder_a$statesListHandler_g38wqt_b5a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/SignalHandler_EditorBuilder_a$soundTypesListHandler_v18rk5_b0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$3$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$soundsListHandler_sjqidp_j0a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/State_EditorBuilder_a$transitionsListHandler_sjqidp_b2a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/Transition_EditorBuilder_a$conditionListHandler_jj4qz_d0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/Transition_EditorBuilder_a$conditionSingleRoleHandler_jj4qz_d0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/classes_gen/ArduinoML/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/models/editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/models/editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/models/structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/models/structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/sandbox/classes_gen/ArduinoML/sandbox/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/sandbox/classes_gen/ArduinoML/sandbox/trace.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/sandbox/source_gen/ArduinoML/sandbox/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/sandbox/source_gen/ArduinoML/sandbox/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen.caches/ArduinoML/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen.caches/ArduinoML/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen.caches/ArduinoML/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen.caches/ArduinoML/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen.caches/ArduinoML/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen.caches/ArduinoML/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/editor/Sensor_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/editor/Sensor_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ArduinoML/source_gen/ArduinoML/structure/trace.info" afterDir="false" />
-    </list>
+    <list default="true" id="f7401ace-bb99-416f-a09f-a2a4c8ff6b39" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +70,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="mps://node://ArduinoML.sandbox/ArduinoML.sandbox/Scenario5_MetaStates">
           <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState" editorFocused="true">
+            <state class="jetbrains.mps.ide.editor.BaseNodeEditor$BaseEditorState">
               <memento saveSessionState="false" viewPositionX="0" viewPositionY="0">
                 <selectionStack>
                   <stackElement className="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection">
@@ -283,15 +250,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="f6daad44-cbc2-4c80-9316-63c6f83e1df8" />
+              <option name="myItemId" value="099409c0-0ced-4933-b9e3-928d0c704016(ArduinoML)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ArduinoML" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:2ba2d655-8ebd-485f-a7a2-f199a6121afb(ArduinoML.sandbox) in IdeaFile[file://E:/Users/nikita/Documents/GitHub/SI5-ArduinoML-MPS/languages/ArduinoML/sandbox/models/ArduinoML.sandbox.mps]" />
+              <option name="myItemId" value="r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure) in IdeaFile[file://E:/Users/nikita/Documents/GitHub/SI5-ArduinoML-MPS/languages/ArduinoML/models/structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -301,7 +264,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="f6daad44-cbc2-4c80-9316-63c6f83e1df8" />
+              <option name="myItemId" value="099409c0-0ced-4933-b9e3-928d0c704016(ArduinoML)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,26 +291,6 @@
               <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1b254480-6688-4783-bed4-db7a4f32c2aa" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="099409c0-0ced-4933-b9e3-928d0c704016(ArduinoML)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -369,11 +312,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="099409c0-0ced-4933-b9e3-928d0c704016(ArduinoML)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure) in IdeaFile[file://E:/Users/nikita/Documents/GitHub/SI5-ArduinoML-MPS/languages/ArduinoML/models/structure.mps]" />
+              <option name="myItemId" value="1b254480-6688-4783-bed4-db7a4f32c2aa" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,6 +327,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:91c6f91e-0db8-4310-bcaf-cb98b7f7d5d2(ArduinoML.constraints) in IdeaFile[file://E:/Users/nikita/Documents/GitHub/SI5-ArduinoML-MPS/languages/ArduinoML/models/constraints.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f6daad44-cbc2-4c80-9316-63c6f83e1df8" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ArduinoML" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:2ba2d655-8ebd-485f-a7a2-f199a6121afb(ArduinoML.sandbox) in IdeaFile[file://E:/Users/nikita/Documents/GitHub/SI5-ArduinoML-MPS/languages/ArduinoML/sandbox/models/ArduinoML.sandbox.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f6daad44-cbc2-4c80-9316-63c6f83e1df8" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -417,13 +384,12 @@
     </option>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\nikita\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28517723" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28517723" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -436,7 +402,7 @@
       <window_info anchor="bottom" id="Bookmarks" order="8" />
       <window_info anchor="bottom" id="Migration" order="9" />
       <window_info anchor="bottom" id="Menu Trace" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022659" side_tool="true" weight="0.19754978" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.5026853" side_tool="true" visible="true" weight="0.3475877" />
       <window_info anchor="bottom" id="Classpath Explorer" order="12" />
       <window_info anchor="bottom" id="Usages" order="13" weight="0.3291536" />
       <window_info anchor="bottom" id="Node Explorer" order="14" weight="0.3291536" />
@@ -444,7 +410,7 @@
       <window_info anchor="bottom" id="Version Control" order="16" weight="0.32972136" />
       <window_info anchor="bottom" id="Generation Tracer" order="17" />
       <window_info anchor="bottom" id="Cell Explorer" order="18" />
-      <window_info anchor="bottom" id="Messages" order="19" sideWeight="0.49848944" visible="true" weight="0.3475877" />
+      <window_info anchor="bottom" id="Messages" order="19" sideWeight="0.49731472" visible="true" weight="0.3475877" />
       <window_info anchor="bottom" id="Typechecker State" order="20" />
       <window_info anchor="bottom" id="Console" order="21" weight="0.32817337" />
       <window_info anchor="bottom" id="RefactoringView" order="22" />
