@@ -143,7 +143,7 @@
         </node>
       </node>
       <node concept="3F0ifn" id="4gRp4RK8nC" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;=" />
+        <property role="3F0ifm" value="&lt;-" />
       </node>
       <node concept="3F0A7n" id="4gRp4RK8nO" role="3EZMnx">
         <ref role="1NtTu8" to="9ma3:4gRp4RJTCZ" resolve="signal" />
@@ -282,7 +282,7 @@
         </node>
       </node>
       <node concept="3F0ifn" id="2Czj7lqr68_" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;=" />
+        <property role="3F0ifm" value="&lt;-" />
       </node>
       <node concept="3F0A7n" id="2Czj7lqr68N" role="3EZMnx">
         <ref role="1NtTu8" to="9ma3:2Czj7lqr67R" resolve="signal" />
