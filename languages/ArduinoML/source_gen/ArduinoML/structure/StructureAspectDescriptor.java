@@ -149,6 +149,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure)/2567176781170523239");
     b.version(2);
     b.property("pin", 0x23a071ae554cbc6aL).type(PrimitiveTypeId.INTEGER).origin("2567176781170523242").done();
+    b.property("isAnalog", 0x3a923cb472454ce1L).type(PrimitiveTypeId.BOOLEAN).origin("4220502546508500193").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSignalHandler() {

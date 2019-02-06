@@ -229,6 +229,12 @@
         <node concept="3F0A7n" id="2ewsqTljPIM" role="3EZMnx">
           <ref role="1NtTu8" to="9ma3:2ewsqTljbLE" resolve="pin" />
         </node>
+        <node concept="3F0ifn" id="3EifbhMhkNE" role="3EZMnx">
+          <property role="3F0ifm" value=" analog:" />
+        </node>
+        <node concept="3F0A7n" id="3EifbhMhkNS" role="3EZMnx">
+          <ref role="1NtTu8" to="9ma3:3EifbhMhkNx" resolve="isAnalog" />
+        </node>
         <node concept="l2Vlx" id="2ewsqTljPIk" role="2iSdaV" />
       </node>
       <node concept="2iRfu4" id="2ewsqTljPIb" role="2iSdaV" />
