@@ -315,5 +315,30 @@
       <ref role="20lvS9" node="2Czj7lqr68Y" resolve="IAction" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3hUFETeuhft">
+    <property role="EcuMT" value="3781526900795053021" />
+    <property role="TrG5h" value="ActionInputAnalog" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3hUFETeuhfu" role="1TKVEl">
+      <property role="IQ2nx" value="3781526900795053022" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3hUFETeuhfy" role="1TKVEl">
+      <property role="IQ2nx" value="3781526900795053026" />
+      <property role="TrG5h" value="comparator" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="3hUFETeuhfw" role="1TKVEi">
+      <property role="IQ2ns" value="3781526900795053024" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2ewsqTljbLB" resolve="Sensor" />
+    </node>
+    <node concept="PrWs8" id="3hUFETeuTgI" role="PzmwI">
+      <ref role="PrY4T" node="2Czj7lqr68Y" resolve="IAction" />
+    </node>
+  </node>
 </model>
 

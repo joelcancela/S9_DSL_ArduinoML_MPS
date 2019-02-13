@@ -265,8 +265,11 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
   }
   private EditorCell createRefNodeList_1() {
     AbstractCellListHandler handler = new Mode_EditorBuilder_a.transitionsListHandler_pjdc5g_a2a(myNode, getEditorContext());
-    EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_transitions");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }

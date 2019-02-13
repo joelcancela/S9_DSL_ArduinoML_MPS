@@ -29,6 +29,7 @@
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -156,6 +157,9 @@
     <node concept="3EZMnI" id="4gRp4RK8or" role="2wV5jI">
       <node concept="3EZMnI" id="4gRp4RK8oy" role="3EZMnx">
         <node concept="VPM3Z" id="4gRp4RK8o$" role="3F10Kt" />
+        <node concept="3F0ifn" id="3hUFETexLJh" role="3EZMnx">
+          <property role="3F0ifm" value="State " />
+        </node>
         <node concept="3F0A7n" id="4gRp4RK8oH" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
@@ -361,14 +365,15 @@
       </node>
       <node concept="3EZMnI" id="5GtHN1Gyu1j" role="3EZMnx">
         <node concept="VPM3Z" id="5GtHN1Gyu1l" role="3F10Kt" />
-        <node concept="3F2HdR" id="5GtHN1Gyu1K" role="3EZMnx">
+        <node concept="l2Vlx" id="5GtHN1Gyu1o" role="2iSdaV" />
+        <node concept="3F2HdR" id="3hUFETeuUDA" role="3EZMnx">
           <ref role="1NtTu8" to="9ma3:5GtHN1GwVeF" resolve="transitions" />
-          <node concept="l2Vlx" id="5GtHN1Gyu1M" role="2czzBx" />
-          <node concept="3F0ifn" id="5GtHN1Gyu1P" role="2czzBI">
+          <node concept="2iRkQZ" id="3hUFETeuUDB" role="2czzBx" />
+          <node concept="VPM3Z" id="3hUFETeuUDC" role="3F10Kt" />
+          <node concept="3F0ifn" id="3hUFETeuUDG" role="2czzBI">
             <property role="3F0ifm" value="no mode transitions defined" />
           </node>
         </node>
-        <node concept="l2Vlx" id="5GtHN1Gyu1o" role="2iSdaV" />
       </node>
       <node concept="35HoNQ" id="5GtHN1GyQfd" role="3EZMnx" />
       <node concept="2iRkQZ" id="5GtHN1GwVf5" role="2iSdaV" />
@@ -402,6 +407,29 @@
         </node>
         <node concept="2iRkQZ" id="5GtHN1GyHh8" role="2iSdaV" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3hUFETeuhfH">
+    <ref role="1XX52x" to="9ma3:3hUFETeuhft" resolve="ActionInputAnalog" />
+    <node concept="3EZMnI" id="3hUFETeuhfT" role="2wV5jI">
+      <node concept="1iCGBv" id="3hUFETeuhg3" role="3EZMnx">
+        <ref role="1NtTu8" to="9ma3:3hUFETeuhfw" resolve="target" />
+        <node concept="1sVBvm" id="3hUFETeuhg5" role="1sWHZn">
+          <node concept="3F0A7n" id="3hUFETeuhgc" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0A7n" id="3hUFETeuhgk" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;= &lt; &gt; =&gt; or ==" />
+        <ref role="1NtTu8" to="9ma3:3hUFETeuhfy" resolve="comparator" />
+      </node>
+      <node concept="3F0A7n" id="3hUFETeuhgw" role="3EZMnx">
+        <property role="1$x2rV" value="[0-1023]" />
+        <ref role="1NtTu8" to="9ma3:3hUFETeuhfu" resolve="value" />
+      </node>
+      <node concept="2iRfu4" id="3hUFETeuhfW" role="2iSdaV" />
     </node>
   </node>
 </model>

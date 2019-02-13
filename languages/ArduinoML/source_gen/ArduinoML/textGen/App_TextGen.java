@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class App_TextGen extends TextGenDescriptorBase {
   @Override
@@ -30,14 +31,28 @@ public class App_TextGen extends TextGenDescriptorBase {
     tgs.append(" **/");
     tgs.newLine();
     tgs.newLine();
-    tgs.append("// Declaring states function headers");
+    tgs.append("// Declaring modes and states function headers");
     tgs.newLine();
     ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        tgs.append("void state_");
+        tgs.append("void sw_");
         tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         tgs.append("();");
         tgs.newLine();
+      }
+    });
+    ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
+      public void visit(final SNode it) {
+        ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode itx) {
+            tgs.append("void ");
+            tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+            tgs.append("_");
+            tgs.append(SPropertyOperations.getString(itx, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+            tgs.append("();");
+            tgs.newLine();
+          }
+        });
       }
     });
     tgs.newLine();
@@ -66,9 +81,9 @@ public class App_TextGen extends TextGenDescriptorBase {
     }
     tgs.newLine();
     tgs.newLine();
-    tgs.append("// Declaring states");
+    tgs.append("// Declaring modes");
     tgs.newLine();
-    tgs.append("enum state{");
+    tgs.append("enum mode{");
     ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -77,45 +92,97 @@ public class App_TextGen extends TextGenDescriptorBase {
         }
       }
     });
-    tgs.append("}current_state = ");
+    tgs.append("}current_mode = ");
     tgs.append(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137c07110L, "isInitial"));
+        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b39eL, "isInitial"));
       }
     }), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     tgs.append(";");
     tgs.newLine();
+    tgs.append("// Declaring states");
+    tgs.newLine();
+    tgs.append("enum state{");
+    ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
+      public void visit(final SNode it) {
+        ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode itx) {
+            tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+            tgs.append("_");
+            tgs.append(SPropertyOperations.getString(itx, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+            if (ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).indexOf(itx) != SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states")).size() - 1 || ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).indexOf(it) != SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes")).size() - 1) {
+              tgs.append(",");
+            }
+          }
+        });
+      }
+    });
+    tgs.append("}current_state = ");
+    ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
+      public void visit(final SNode it) {
+        ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode itx) {
+            if (SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b39eL, "isInitial")) && SPropertyOperations.getBoolean(itx, MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x110dd9137c07110L, "isInitial"))) {
+              tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              tgs.append("_");
+              tgs.append(SPropertyOperations.getString(itx, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              tgs.append(";");
+              tgs.newLine();
+              tgs.newLine();
+            }
+          }
+        });
+      }
+    });
     tgs.append("long time = 0; long debounce = 200;");
     if ((ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
+        return (ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode itx) {
+            return SLinkOperations.getTarget(itx, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
+          }
+        }) != null);
       }
     }) != null)) {
-      tgs.newLine();
-      tgs.append("bool firstPass[");
-      tgs.append(Integer.toString(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes")).size()));
-      tgs.append("] = {");
-      ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          tgs.append("true");
-          if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).indexOf(it) != SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes")).size() - 1) {
-            tgs.append(",");
-          }
+      SNode mode = ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode itx) {
+              return SLinkOperations.getTarget(itx, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
+            }
+          }) != null);
         }
       });
+      final Wrappers._int states_number = new Wrappers._int(0);
+      ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          states_number.value += SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states")).size();
+        }
+      });
+      tgs.newLine();
+      tgs.append("bool firstPass[");
+      tgs.append(Integer.toString(states_number.value));
+      tgs.append("] = {");
+      for (int i = 0; i < states_number.value; i++) {
+        tgs.append("true");
+        if (i != states_number.value - 1) {
+          tgs.append(",");
+        }
+      }
       tgs.append("};");
       tgs.newLine();
       tgs.newLine();
+      SNode actuator = SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(mode, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
+        }
+      }), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x763d497ee8ebb06bL, 0x763d497ee8ebb06cL, "actuator"));
       ctx.getBuffer().area().increaseIndent();
       tgs.append("void shortBeep(){");
       tgs.newLine();
       tgs.indent();
       tgs.append("tone(");
-      tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
-        }
-      }), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x763d497ee8ebb06bL, 0x763d497ee8ebb06cL, "actuator")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      tgs.append(SPropertyOperations.getString(actuator, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(", 880);");
       tgs.newLine();
       tgs.indent();
@@ -123,11 +190,7 @@ public class App_TextGen extends TextGenDescriptorBase {
       tgs.newLine();
       tgs.indent();
       tgs.append("noTone(");
-      tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
-        }
-      }), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x763d497ee8ebb06bL, 0x763d497ee8ebb06cL, "actuator")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      tgs.append(SPropertyOperations.getString(actuator, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(");");
       tgs.newLine();
       tgs.indent();
@@ -140,11 +203,7 @@ public class App_TextGen extends TextGenDescriptorBase {
       tgs.newLine();
       tgs.indent();
       tgs.append("tone(");
-      tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
-        }
-      }), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x763d497ee8ebb06bL, 0x763d497ee8ebb06cL, "actuator")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      tgs.append(SPropertyOperations.getString(actuator, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(", 880);");
       tgs.newLine();
       tgs.indent();
@@ -152,11 +211,7 @@ public class App_TextGen extends TextGenDescriptorBase {
       tgs.newLine();
       tgs.indent();
       tgs.append("noTone(");
-      tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")) != null;
-        }
-      }), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a31L, 0x763d497ee8ea5bc7L, "sounds")), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x763d497ee8ebb06bL, 0x763d497ee8ebb06cL, "actuator")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      tgs.append(SPropertyOperations.getString(actuator, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(");");
       tgs.newLine();
       tgs.indent();
@@ -169,7 +224,7 @@ public class App_TextGen extends TextGenDescriptorBase {
       tgs.newLine();
       tgs.indent();
       tgs.append("for(int i=0; i<");
-      tgs.append(Integer.toString(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes")).size()));
+      tgs.append(Integer.toString(states_number.value));
       tgs.append(";i++)");
       tgs.newLine();
       tgs.indent();
@@ -192,6 +247,17 @@ public class App_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"));
+      final SNode lastItem = Sequence.fromIterable(collection).last();
+      for (SNode item : collection) {
+        tgs.appendNode(item);
+        if (item != lastItem) {
+          tgs.append("\n");
+        }
+      }
+    }
+    tgs.newLine();
+    {
+      Iterable<SNode> collection = SLinkOperations.collectMany(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes")), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
         tgs.appendNode(item);

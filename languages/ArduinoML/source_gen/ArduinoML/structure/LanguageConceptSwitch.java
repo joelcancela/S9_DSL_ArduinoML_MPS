@@ -11,21 +11,23 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int Action = 0;
   public static final int ActionInput = 1;
-  public static final int Actuator = 2;
-  public static final int App = 3;
-  public static final int IAction = 4;
-  public static final int Mode = 5;
-  public static final int Sensor = 6;
-  public static final int SignalHandler = 7;
-  public static final int SoundType = 8;
-  public static final int State = 9;
-  public static final int Transition = 10;
-  public static final int TransitionMode = 11;
+  public static final int ActionInputAnalog = 2;
+  public static final int Actuator = 3;
+  public static final int App = 4;
+  public static final int IAction = 5;
+  public static final int Mode = 6;
+  public static final int Sensor = 7;
+  public static final int SignalHandler = 8;
+  public static final int SoundType = 9;
+  public static final int State = 10;
+  public static final int Transition = 11;
+  public static final int TransitionMode = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x99409c00ced4933L, 0xb9e3928d0c704016L);
     builder.put(0x110dd9137bf9a3cL, Action);
     builder.put(0x2a234c755a6c61f6L, ActionInput);
+    builder.put(0x347aaeae4e7913ddL, ActionInputAnalog);
     builder.put(0x110dd9137bf9a26L, Actuator);
     builder.put(0x110dd9137bf9a23L, App);
     builder.put(0x2a234c755a6c623eL, IAction);

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Action;
   private ConceptPresentation props_ActionInput;
+  private ConceptPresentation props_ActionInputAnalog;
   private ConceptPresentation props_Actuator;
   private ConceptPresentation props_App;
   private ConceptPresentation props_IAction;
@@ -41,6 +42,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ActionInput = cpb.create();
         }
         return props_ActionInput;
+      case LanguageConceptSwitch.ActionInputAnalog:
+        if (props_ActionInputAnalog == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x347aaeae4e7913ddL, 0x347aaeae4e7913e0L, "target", "", "");
+          props_ActionInputAnalog = cpb.create();
+        }
+        return props_ActionInputAnalog;
       case LanguageConceptSwitch.Actuator:
         if (props_Actuator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

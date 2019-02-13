@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAction = createDescriptorForAction();
   /*package*/ final ConceptDescriptor myConceptActionInput = createDescriptorForActionInput();
+  /*package*/ final ConceptDescriptor myConceptActionInputAnalog = createDescriptorForActionInputAnalog();
   /*package*/ final ConceptDescriptor myConceptActuator = createDescriptorForActuator();
   /*package*/ final ConceptDescriptor myConceptApp = createDescriptorForApp();
   /*package*/ final ConceptDescriptor myConceptIAction = createDescriptorForIAction();
@@ -38,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAction, myConceptActionInput, myConceptActuator, myConceptApp, myConceptIAction, myConceptMode, myConceptSensor, myConceptSignalHandler, myConceptSoundType, myConceptState, myConceptTransition, myConceptTransitionMode);
+    return Arrays.asList(myConceptAction, myConceptActionInput, myConceptActionInputAnalog, myConceptActuator, myConceptApp, myConceptIAction, myConceptMode, myConceptSensor, myConceptSignalHandler, myConceptSoundType, myConceptState, myConceptTransition, myConceptTransitionMode);
   }
 
   @Override
@@ -49,6 +50,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAction;
       case LanguageConceptSwitch.ActionInput:
         return myConceptActionInput;
+      case LanguageConceptSwitch.ActionInputAnalog:
+        return myConceptActionInputAnalog;
       case LanguageConceptSwitch.Actuator:
         return myConceptActuator;
       case LanguageConceptSwitch.App:
@@ -101,6 +104,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("signal", 0x2a234c755a6c61f7L).type(MetaIdFactory.dataTypeId(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a37L)).origin("3036354640689783287").done();
     b.associate("target", 0x2a234c755a6c61f9L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x23a071ae554cbc67L).optional(false).origin("3036354640689783289").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForActionInputAnalog() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ArduinoML", "ActionInputAnalog", 0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x347aaeae4e7913ddL);
+    b.class_(false, false, false);
+    b.parent(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x2a234c755a6c623eL);
+    b.origin("r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure)/3781526900795053021");
+    b.version(2);
+    b.property("value", 0x347aaeae4e7913deL).type(PrimitiveTypeId.INTEGER).origin("3781526900795053022").done();
+    b.property("comparator", 0x347aaeae4e7913e2L).type(PrimitiveTypeId.STRING).origin("3781526900795053026").done();
+    b.associate("target", 0x347aaeae4e7913e0L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x23a071ae554cbc67L).optional(false).origin("3781526900795053024").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForActuator() {
