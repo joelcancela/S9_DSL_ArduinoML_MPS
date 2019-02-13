@@ -80,9 +80,9 @@
     <node concept="1TJgyj" id="4gRp4RJTD8" role="1TKVEi">
       <property role="IQ2ns" value="76804809440598600" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="states" />
+      <property role="20kJfa" value="modes" />
       <property role="20lbJX" value="1..n" />
-      <ref role="20lvS9" node="4gRp4RJTCL" resolve="State" />
+      <ref role="20lvS9" node="5GtHN1GwVer" resolve="Mode" />
     </node>
   </node>
   <node concept="1TIwiD" id="4gRp4RJTCA">
@@ -177,6 +177,11 @@
       <property role="TrG5h" value="pin" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="3EifbhMhkNx" role="1TKVEl">
+      <property role="IQ2nx" value="4220502546508500193" />
+      <property role="TrG5h" value="isAnalog" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2Czj7lqpseR">
     <property role="EcuMT" value="3036354640689349559" />
@@ -262,6 +267,52 @@
       <property role="20kJfa" value="soundTypes" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="7oXinVCU_Jb" resolve="SoundType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5GtHN1GwVer">
+    <property role="EcuMT" value="6565605250382934939" />
+    <property role="TrG5h" value="Mode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5GtHN1GwVes" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="5GtHN1GwVeu" role="1TKVEl">
+      <property role="IQ2nx" value="6565605250382934942" />
+      <property role="TrG5h" value="isInitial" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyj" id="5GtHN1GwVey" role="1TKVEi">
+      <property role="IQ2ns" value="6565605250382934946" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="states" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="4gRp4RJTCL" resolve="State" />
+    </node>
+    <node concept="1TJgyj" id="5GtHN1GwVeF" role="1TKVEi">
+      <property role="IQ2ns" value="6565605250382934955" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="transitions" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5GtHN1GwVeA" resolve="TransitionMode" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5GtHN1GwVeA">
+    <property role="EcuMT" value="6565605250382934950" />
+    <property role="TrG5h" value="TransitionMode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5GtHN1GyHg1" role="1TKVEi">
+      <property role="IQ2ns" value="6565605250383401985" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="mode" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5GtHN1GwVer" resolve="Mode" />
+    </node>
+    <node concept="1TJgyj" id="5GtHN1GyHg3" role="1TKVEi">
+      <property role="IQ2ns" value="6565605250383401987" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="condition" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2Czj7lqr68Y" resolve="IAction" />
     </node>
   </node>
 </model>

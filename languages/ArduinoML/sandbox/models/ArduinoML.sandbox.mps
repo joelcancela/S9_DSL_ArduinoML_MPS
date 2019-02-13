@@ -26,11 +26,20 @@
       </concept>
       <concept id="76804809440598563" name="ArduinoML.structure.App" flags="ng" index="QFOuM">
         <child id="76804809440598571" name="actuators" index="QFOuU" />
-        <child id="76804809440598600" name="states" index="QFOvp" />
+        <child id="76804809440598600" name="modes" index="QFOvp" />
         <child id="2567176781170545460" name="sensors" index="1QVmaq" />
       </concept>
       <concept id="76804809440598566" name="ArduinoML.structure.Actuator" flags="ng" index="QFOuR">
         <property id="76804809440598569" name="pin" index="QFOuS" />
+      </concept>
+      <concept id="6565605250382934950" name="ArduinoML.structure.TransitionMode" flags="ng" index="RBwim">
+        <reference id="6565605250383401985" name="mode" index="R_QcL" />
+        <child id="6565605250383401987" name="condition" index="R_QcN" />
+      </concept>
+      <concept id="6565605250382934939" name="ArduinoML.structure.Mode" flags="ng" index="RBwiF">
+        <property id="6565605250382934942" name="isInitial" index="RBwiI" />
+        <child id="6565605250382934946" name="states" index="RBwii" />
+        <child id="6565605250382934955" name="transitions" index="RBwir" />
       </concept>
       <concept id="3036354640689349559" name="ArduinoML.structure.Transition" flags="ng" index="1KhCZ2">
         <reference id="3036354640689349566" name="state" index="1KhCZb" />
@@ -288,6 +297,53 @@
         <ref role="1KhCZb" node="7oXinVCUv89" resolve="s1" />
         <node concept="1KjMQ3" id="7oXinVCX53F" role="1KhCYZ">
           <ref role="1KjMQc" node="7oXinVCUV1s" resolve="theButton2" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="QFOuM" id="5GtHN1GyHeI">
+    <property role="TrG5h" value="Scenario5_MetaStates" />
+    <node concept="1QVcR9" id="5GtHN1GyHeM" role="1QVmaq">
+      <property role="TrG5h" value="button" />
+      <property role="1QVcR4" value="8" />
+    </node>
+    <node concept="QFOuR" id="5GtHN1GyHeJ" role="QFOuU">
+      <property role="TrG5h" value="buzzer" />
+      <property role="QFOuS" value="9" />
+    </node>
+    <node concept="QFOuR" id="5GtHN1GyHeO" role="QFOuU">
+      <property role="TrG5h" value="led" />
+      <property role="QFOuS" value="10" />
+    </node>
+    <node concept="RBwiF" id="5GtHN1GyHeK" role="QFOvp">
+      <property role="TrG5h" value="main" />
+      <property role="RBwiI" value="true" />
+      <node concept="RBwim" id="5GtHN1GyQdP" role="RBwir">
+        <ref role="R_QcL" node="5GtHN1GyHfD" resolve="second" />
+        <node concept="QFOuH" id="5GtHN1GyQdT" role="R_QcN">
+          <ref role="QFOvg" node="5GtHN1GyHeO" resolve="led" />
+        </node>
+      </node>
+      <node concept="QFOuw" id="5GtHN1GyHeL" role="RBwii">
+        <property role="TrG5h" value="day" />
+        <property role="QOaM1" value="true" />
+        <node concept="2uPJ$l" id="5GtHN1GyHfu" role="2uPLaT">
+          <ref role="2uPJ$i" node="5GtHN1GyHeJ" resolve="buzzer" />
+          <node concept="2uPLaP" id="5GtHN1GyHfv" role="2uPJ$g">
+            <property role="2uPLaM" value="shortBeep();" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="RBwiF" id="5GtHN1GyHfD" role="QFOvp">
+      <property role="TrG5h" value="second" />
+      <node concept="QFOuw" id="5GtHN1GyHfE" role="RBwii">
+        <property role="TrG5h" value="night" />
+        <node concept="2uPJ$l" id="5GtHN1GyHfL" role="2uPLaT">
+          <ref role="2uPJ$i" node="5GtHN1GyHeJ" resolve="buzzer" />
+          <node concept="2uPLaP" id="5GtHN1GyHfM" role="2uPJ$g">
+            <property role="2uPLaM" value="longBeep();" />
+          </node>
         </node>
       </node>
     </node>
