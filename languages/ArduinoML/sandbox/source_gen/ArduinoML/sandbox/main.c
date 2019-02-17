@@ -80,8 +80,6 @@ void s_day_off()
 {
   if(firstPass[day_off]){
     shortBeep();
-    shortBeep();
-    shortBeep();
     resetPass(day_off);
   }
   digitalWrite(s5_led, LOW);
@@ -93,7 +91,7 @@ void s_day_off()
     time = millis();
     current_mode = night;
     current_state = def_state_night;
-return;
+    return;
   }
   if(digitalRead(s5_btn) == HIGH && guard){
     time = millis();
@@ -103,6 +101,7 @@ return;
 
 void s_day_on()
 {
+  resetPass(day_on);
   digitalWrite(s5_buzzer, HIGH);
   digitalWrite(s5_led, HIGH);
 
@@ -111,7 +110,7 @@ void s_day_on()
     time = millis();
     current_mode = night;
     current_state = def_state_night;
-return;
+    return;
   }
   if(digitalRead(s5_btn) == LOW && guard){
     time = millis();
@@ -121,6 +120,7 @@ return;
 
 void s_night_noff()
 {
+  resetPass(night_noff);
   digitalWrite(s5_ledmode, LOW);
   digitalWrite(s5_led, LOW);
   digitalWrite(s5_buzzer, LOW);
@@ -130,7 +130,7 @@ void s_night_noff()
     time = millis();
     current_mode = day;
     current_state = def_state_day;
-return;
+    return;
   }
   if(digitalRead(s5_btn) == HIGH && guard){
     time = millis();
@@ -140,6 +140,7 @@ return;
 
 void s_night_non()
 {
+  resetPass(night_non);
   digitalWrite(s5_led, HIGH);
   digitalWrite(s5_buzzer, HIGH);
 
@@ -148,7 +149,7 @@ void s_night_non()
     time = millis();
     current_mode = day;
     current_state = def_state_day;
-return;
+    return;
   }
   if(digitalRead(s5_btn) == LOW && guard){
     time = millis();

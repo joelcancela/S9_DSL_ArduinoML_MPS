@@ -225,12 +225,6 @@
           <node concept="2uPLaP" id="5y44sGLZoLJ" role="2uPJ$g">
             <property role="2uPLaM" value="shortBeep();" />
           </node>
-          <node concept="2uPLaP" id="5y44sGLZoLM" role="2uPJ$g">
-            <property role="2uPLaM" value="shortBeep();" />
-          </node>
-          <node concept="2uPLaP" id="5y44sGLZoLP" role="2uPJ$g">
-            <property role="2uPLaM" value="shortBeep();" />
-          </node>
         </node>
       </node>
       <node concept="QFOuw" id="5y44sGLZoLm" role="RBwii">
