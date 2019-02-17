@@ -45,6 +45,8 @@ public class State_TextGen extends TextGenDescriptorBase {
       tgs.indent();
       tgs.indent();
       tgs.append("resetPass(");
+      tgs.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, "ArduinoML.structure.Mode")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      tgs.append("_");
       tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(");");
       tgs.newLine();

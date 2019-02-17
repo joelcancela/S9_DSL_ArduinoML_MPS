@@ -7,6 +7,10 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class Mode_TextGen extends TextGenDescriptorBase {
   @Override
@@ -14,8 +18,49 @@ public class Mode_TextGen extends TextGenDescriptorBase {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append("void sw_");
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    tgs.append("{");
+    tgs.append("(){");
     tgs.newLine();
+    ctx.getBuffer().area().increaseIndent();
+    tgs.indent();
+    tgs.append("switch(current_state){");
+    tgs.newLine();
+    ctx.getBuffer().area().increaseIndent();
+    ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        tgs.indent();
+        tgs.append("case ");
+        tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        tgs.append("_");
+        tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        tgs.append(":");
+        tgs.newLine();
+        tgs.indent();
+        tgs.indent();
+        tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        tgs.append("_");
+        tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        tgs.append("();");
+        tgs.newLine();
+        tgs.indent();
+        tgs.indent();
+        tgs.append("break;");
+        tgs.newLine();
+      }
+    });
+    ctx.getBuffer().area().decreaseIndent();
+    tgs.indent();
+    tgs.indent();
+    tgs.append("default:");
+    tgs.newLine();
+    tgs.indent();
+    tgs.indent();
+    tgs.indent();
+    tgs.append("break;");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("}");
+    tgs.newLine();
+    ctx.getBuffer().area().decreaseIndent();
     tgs.append("}");
     tgs.newLine();
   }
