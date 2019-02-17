@@ -83,8 +83,10 @@
         <property role="QOaM1" value="true" />
         <node concept="1KhCZ2" id="3hUFETeAdTA" role="1Khdje">
           <ref role="1KhCZb" node="3hUFETeAdTa" resolve="on" />
-          <node concept="1KjMQ3" id="3hUFETeAdTX" role="1KhCYZ">
-            <ref role="1KjMQc" node="3hUFETeAdTn" resolve="s5_btn" />
+          <node concept="1U0VPN" id="5y44sGLSetm" role="1KhCYZ">
+            <property role="1U0VPc" value="&lt;" />
+            <property role="1U0VPK" value="7" />
+            <ref role="1U0VPe" node="3hUFETexgkQ" resolve="s5_light" />
           </node>
         </node>
         <node concept="QFOuH" id="3hUFETeAdTs" role="5taz3">

@@ -24,6 +24,7 @@ enum mode{day,night}current_mode = day;
 // Declaring states
 enum state{day_off,day_on,night_noff,night_non}current_state = day_off;
 
+int def_state_day=day_off,def_state_night=night_noff;
 long time = 0; long debounce = 200;
 bool firstPass[4] = {true,true,true,true};
 
@@ -49,7 +50,7 @@ void resetPass(int index){
   firstPass[index] = false;
 }
 
-void sw_day{
+void sw_day(){
   switch(current_state){
     case day_off:
         day_off();
@@ -62,7 +63,7 @@ void sw_day{
   }
 }
 
-void sw_night{
+void sw_night(){
   switch(current_state){
     case night_noff:
         night_noff();
@@ -82,9 +83,10 @@ void day_off()
   digitalWrite(s5_ledmode, HIGH);
 
   boolean guard = millis() - time > debounce;
-  if(digitalRead(s5_btn) == HIGH && guard){
+
+  if(<!TextGen not found for 'ArduinoML.structure.ActionInputAnalog'!> && guard){
     time = millis();
-    current_state = on;
+    current_state = day_on;
   }
 }
 
@@ -92,14 +94,16 @@ void day_on()
 {
   if(firstPass[day_on]){
     shortBeep();
-    resetPass(on);
-  }  digitalWrite(s5_buzzer, HIGH);
+    resetPass(day_on);
+  }
+  digitalWrite(s5_buzzer, HIGH);
   digitalWrite(s5_led, HIGH);
 
   boolean guard = millis() - time > debounce;
+
   if(digitalRead(s5_btn) == LOW && guard){
     time = millis();
-    current_state = off;
+    current_state = day_off;
   }
 }
 
@@ -110,9 +114,10 @@ void night_noff()
   digitalWrite(s5_buzzer, LOW);
 
   boolean guard = millis() - time > debounce;
+
   if(digitalRead(s5_btn) == HIGH && guard){
     time = millis();
-    current_state = non;
+    current_state = night_non;
   }
 }
 
@@ -121,14 +126,16 @@ void night_non()
   if(firstPass[night_non]){
     shortBeep();
     shortBeep();
-    resetPass(non);
-  }  digitalWrite(s5_led, HIGH);
+    resetPass(night_non);
+  }
+  digitalWrite(s5_led, HIGH);
   digitalWrite(s5_buzzer, HIGH);
 
   boolean guard = millis() - time > debounce;
+
   if(digitalRead(s5_btn) == LOW && guard){
     time = millis();
-    current_state = noff;
+    current_state = night_noff;
   }
 }
 

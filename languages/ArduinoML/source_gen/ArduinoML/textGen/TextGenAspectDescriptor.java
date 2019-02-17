@@ -24,6 +24,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     switch (myIndex.index(concept)) {
       case LanguageConceptSwitch.ActionInput:
         return new ActionInput_TextGen();
+      case LanguageConceptSwitch.ActionInputAnalog:
+        return new ActionInputAnalog_TextGen();
       case LanguageConceptSwitch.Actuator:
         return new Actuator_TextGen();
       case LanguageConceptSwitch.App:
@@ -34,6 +36,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new Sensor_TextGen();
       case LanguageConceptSwitch.State:
         return new State_TextGen();
+      case LanguageConceptSwitch.TransitionMode:
+        return new TransitionMode_TextGen();
     }
     return null;
   }
