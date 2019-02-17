@@ -34,6 +34,10 @@ public class TransitionMode_TextGen extends TextGenDescriptorBase {
       tgs.append(";");
       tgs.newLine();
       tgs.indent();
+      tgs.indent();
+      tgs.append("return;");
+      tgs.newLine();
+      tgs.indent();
       tgs.append("}");
     }
     if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b3a6L, 0x5b1db7306c8ad403L, "condition"))).count() == 1) {
@@ -56,6 +60,10 @@ public class TransitionMode_TextGen extends TextGenDescriptorBase {
       tgs.append("current_state = def_state_");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b3a6L, 0x5b1db7306c8ad401L, "mode")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(";");
+      tgs.newLine();
+      tgs.indent();
+      tgs.indent();
+      tgs.append("return;");
       tgs.newLine();
       tgs.indent();
       tgs.append("}");
@@ -82,6 +90,10 @@ public class TransitionMode_TextGen extends TextGenDescriptorBase {
       tgs.append("current_state = def_state_");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getReferenceLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b3a6L, 0x5b1db7306c8ad401L, "mode")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       tgs.append(";");
+      tgs.newLine();
+      tgs.indent();
+      tgs.indent();
+      tgs.append("return;");
       tgs.newLine();
       tgs.indent();
       tgs.append("}");

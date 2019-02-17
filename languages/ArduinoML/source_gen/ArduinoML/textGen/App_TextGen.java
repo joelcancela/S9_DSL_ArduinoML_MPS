@@ -46,6 +46,7 @@ public class App_TextGen extends TextGenDescriptorBase {
         ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode itx) {
             tgs.append("void ");
+            tgs.append("s_");
             tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
             tgs.append("_");
             tgs.append(SPropertyOperations.getString(itx, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
