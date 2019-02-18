@@ -1,23 +1,28 @@
 Client (Arduino)
 ================
-1) Send hello message "#hello:\n"
-2) Send states "#sates:day_state_off=0,day_state_on=1,night_state_off=0,night_state_on=1\n"
+0) Wait 5 seconds after Serial Port is available and ready
+1) Send '*' and wait 200ms
+2) send hello message "#hello:\n"
+3) Send states "#states:day_state_off=0,day_state_on=1,night_state_off=0,night_state_on=1\n"
     The key is the function name, the value is the ENUM associated value
-3) Send modes "#modes:day=0,night=1\n"
+4) Send modes "#modes:day=0,night=1\n"
     The key is the mode name, the value is the ENUM associated value
-4) Send settings "#params:key=value,key2=value3\n"
+5) Send settings "#params:key=value,key2=value3\n"
     Send key/values pairs for monitoring settings
-5) Send EndOfInit message "#eoi:\n"
-6) Start transmitting for monitor "#monitor:\n"
+6) Send EndOfInit message "#eoi:\n"
+7) Start transmitting for monitor "#monitor:\n"
     * MESSAGE FORMAT "<mode>,<state>\n"
     * EXAMPLE: "0,0\n"
         => Initial stage, <day> mode, <day_state_off> state
 
 Server (Python Listener)
 ========================
-1) Send '*' each 500 ms until '#hello:' message
-2) skip, wait for <states>, then parse & store
-3) skip, wait for <modes>, ...
-4) skip, wait for <settings>, ..
-5) skip, wait <EndOfInit> message, skip, wait <monitor> announce, skip
-6) for each message, read mode, state
+
+1) Loop until '*' char is received
+2) read next line, '#hello:\n' message
+3) read next line, <states>, then parse & store
+4) read next line, <modes>, ...
+5) read next line, <settings>, ...
+6) read next line, <EndOfInit> message
+7) read next line, <monitor> announce
+7) Loop for each message, read mode, state

@@ -139,26 +139,20 @@ void setup()
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+  delay(5000);
 
-  while(1) {
-    // verify if server is ready with '+'
-    if (Serial.read() == 0x43) {
-      break;
-    }
-    Serial.write('*');
-    delay(500);
-  }
+  Serial.write('*');
 
-  delay(500);
+  delay(200);
   
   Serial.print("#hello:\n");
-  Serial.print("#sates:day_state_off=0,day_state_on=1,night_state_off=0,night_state_on=1\n");
+  Serial.print("#states:day_state_off=0,day_state_on=1,night_state_off=0,night_state_on=1\n");
   Serial.print("#modes:day=0,night=1\n");
   Serial.print("#params:key=value,key2=value3\n");
   Serial.print("#eoi:\n");
   Serial.print("#monitor:\n");
 
-  delay(2000);
+  delay(200);
 }
 
 void loop()
