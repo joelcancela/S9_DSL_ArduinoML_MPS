@@ -66,6 +66,18 @@
         <node concept="l2Vlx" id="4gRp4RK8jc" role="2iSdaV" />
       </node>
       <node concept="35HoNQ" id="2ewsqTljYHz" role="3EZMnx" />
+      <node concept="3EZMnI" id="3PAJqZlTzBm" role="3EZMnx">
+        <node concept="VPM3Z" id="3PAJqZlTzBo" role="3F10Kt" />
+        <node concept="3XFhqQ" id="3PAJqZlTXcK" role="3EZMnx" />
+        <node concept="3F0ifn" id="3PAJqZlTzBq" role="3EZMnx">
+          <property role="3F0ifm" value="enablePlot:" />
+        </node>
+        <node concept="l2Vlx" id="3PAJqZlTzBr" role="2iSdaV" />
+        <node concept="3F0A7n" id="3PAJqZlTzC3" role="3EZMnx">
+          <ref role="1NtTu8" to="9ma3:3PAJqZlTxaC" resolve="enablePlot" />
+        </node>
+      </node>
+      <node concept="35HoNQ" id="3PAJqZlTzCH" role="3EZMnx" />
       <node concept="3EZMnI" id="2ewsqTljBpI" role="3EZMnx">
         <node concept="VPM3Z" id="2ewsqTljBpK" role="3F10Kt" />
         <node concept="3XFhqQ" id="2ewsqTljBqg" role="3EZMnx" />

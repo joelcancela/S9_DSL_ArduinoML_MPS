@@ -25,6 +25,7 @@
         <reference id="76804809440598593" name="target" index="QFOvg" />
       </concept>
       <concept id="76804809440598563" name="ArduinoML.structure.App" flags="ng" index="QFOuM">
+        <property id="4424432246843642536" name="enablePlot" index="3CwaW7" />
         <child id="76804809440598571" name="actuators" index="QFOuU" />
         <child id="76804809440598600" name="modes" index="QFOvp" />
         <child id="2567176781170545460" name="sensors" index="1QVmaq" />
@@ -313,6 +314,96 @@
     <node concept="QFOuR" id="5y44sGLZoLH" role="QFOuU">
       <property role="TrG5h" value="s5_ledmode" />
       <property role="QFOuS" value="11" />
+    </node>
+  </node>
+  <node concept="QFOuM" id="3PAJqZlUc9i">
+    <property role="TrG5h" value="Scenario_MetaStatesAndPlotting" />
+    <property role="3CwaW7" value="true" />
+    <node concept="1QVcR9" id="3PAJqZlUc9m" role="1QVmaq">
+      <property role="TrG5h" value="light" />
+      <property role="1QVcR4" value="1" />
+      <property role="18PR1l" value="true" />
+    </node>
+    <node concept="1QVcR9" id="3PAJqZlUc9s" role="1QVmaq">
+      <property role="TrG5h" value="button" />
+      <property role="1QVcR4" value="8" />
+    </node>
+    <node concept="QFOuR" id="3PAJqZlUc9j" role="QFOuU">
+      <property role="TrG5h" value="buzz" />
+      <property role="QFOuS" value="9" />
+    </node>
+    <node concept="QFOuR" id="3PAJqZlUc9v" role="QFOuU">
+      <property role="TrG5h" value="led" />
+      <property role="QFOuS" value="10" />
+    </node>
+    <node concept="QFOuR" id="3PAJqZlUc9y" role="QFOuU">
+      <property role="TrG5h" value="ledmode" />
+      <property role="QFOuS" value="11" />
+    </node>
+    <node concept="RBwiF" id="3PAJqZlUcb2" role="QFOvp">
+      <property role="TrG5h" value="night" />
+      <node concept="RBwim" id="3PAJqZlUcbr" role="RBwir">
+        <ref role="R_QcL" node="3hUFETeAdT9" resolve="day" />
+        <node concept="1U0VPN" id="3PAJqZlUcbx" role="R_QcN">
+          <property role="1U0VPc" value="&gt;=" />
+          <property role="1U0VPK" value="300" />
+          <ref role="1U0VPe" node="3PAJqZlUc9m" resolve="light" />
+        </node>
+      </node>
+      <node concept="QFOuw" id="3PAJqZlUcb3" role="RBwii">
+        <property role="TrG5h" value="off" />
+        <property role="QOaM1" value="true" />
+        <node concept="QFOuH" id="3PAJqZlUcbk" role="5taz3">
+          <ref role="QFOvg" node="3PAJqZlUc9j" resolve="buzz" />
+        </node>
+      </node>
+    </node>
+    <node concept="RBwiF" id="3PAJqZlUc9k" role="QFOvp">
+      <property role="TrG5h" value="day" />
+      <property role="RBwiI" value="true" />
+      <node concept="RBwim" id="3PAJqZlUcaE" role="RBwir">
+        <ref role="R_QcL" node="3hUFETe_gyU" resolve="night" />
+        <node concept="1U0VPN" id="3PAJqZlUcbp" role="R_QcN">
+          <property role="1U0VPc" value="&lt;" />
+          <property role="1U0VPK" value="300" />
+          <ref role="1U0VPe" node="3PAJqZlUc9m" resolve="light" />
+        </node>
+      </node>
+      <node concept="QFOuw" id="3PAJqZlUc9O" role="RBwii">
+        <property role="TrG5h" value="off" />
+        <property role="QOaM1" value="true" />
+        <node concept="1KhCZ2" id="3PAJqZlUcam" role="1Khdje">
+          <ref role="1KhCZb" node="3PAJqZlUc9l" resolve="on" />
+          <node concept="1KjMQ3" id="3PAJqZlUcau" role="1KhCYZ">
+            <ref role="1KjMQc" node="3PAJqZlUc9s" resolve="button" />
+          </node>
+        </node>
+        <node concept="QFOuH" id="3PAJqZlUcac" role="5taz3">
+          <property role="QFOuI" value="LOW" />
+          <ref role="QFOvg" node="3PAJqZlUc9v" resolve="led" />
+        </node>
+        <node concept="QFOuH" id="3PAJqZlUcai" role="5taz3">
+          <property role="QFOuI" value="LOW" />
+          <ref role="QFOvg" node="3PAJqZlUc9j" resolve="buzz" />
+        </node>
+      </node>
+      <node concept="QFOuw" id="3PAJqZlUc9l" role="RBwii">
+        <property role="TrG5h" value="on" />
+        <node concept="1KhCZ2" id="3PAJqZlUcaw" role="1Khdje">
+          <ref role="1KhCZb" node="3PAJqZlUc9O" resolve="off" />
+          <node concept="1KjMQ3" id="3PAJqZlUcaC" role="1KhCYZ">
+            <property role="1KjMQ2" value="LOW" />
+            <ref role="1KjMQc" node="3PAJqZlUc9s" resolve="button" />
+          </node>
+        </node>
+        <node concept="QFOuH" id="3PAJqZlUc9V" role="5taz3">
+          <property role="QFOuI" value="HIGH" />
+          <ref role="QFOvg" node="3PAJqZlUc9v" resolve="led" />
+        </node>
+        <node concept="QFOuH" id="3PAJqZlUca6" role="5taz3">
+          <ref role="QFOvg" node="3PAJqZlUc9j" resolve="buzz" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
