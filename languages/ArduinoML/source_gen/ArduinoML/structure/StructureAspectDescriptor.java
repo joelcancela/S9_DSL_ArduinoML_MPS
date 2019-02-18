@@ -133,6 +133,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:7bfc2ac3-4866-4488-b53e-56494783dd09(ArduinoML.structure)/76804809440598563");
     b.version(2);
+    b.property("enablePlot", 0x3d66bdafd5e612a8L).type(PrimitiveTypeId.BOOLEAN).origin("4424432246843642536").done();
     b.aggregate("actuators", 0x110dd9137bf9a2bL).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a26L).optional(false).ordered(true).multiple(true).origin("76804809440598571").done();
     b.aggregate("sensors", 0x23a071ae554d1334L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x23a071ae554cbc67L).optional(true).ordered(true).multiple(true).origin("2567176781170545460").done();
     b.aggregate("modes", 0x110dd9137bf9a48L).target(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL).optional(false).ordered(true).multiple(true).origin("76804809440598600").done();

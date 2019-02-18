@@ -84,6 +84,11 @@
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="5GtHN1GwVer" resolve="Mode" />
     </node>
+    <node concept="1TJgyi" id="3PAJqZlTxaC" role="1TKVEl">
+      <property role="IQ2nx" value="4424432246843642536" />
+      <property role="TrG5h" value="enablePlot" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4gRp4RJTCA">
     <property role="EcuMT" value="76804809440598566" />
