@@ -2,15 +2,15 @@
 #include <util/delay.h>
 #include <Arduino.h>
 
-/** Generating code for applicationScenario_MetaStates **/
+/** Generating code for applicationScenario_MetaStatesWithEntrySounds **/
 
 // Declaring modes and states function headers
 void sw_day();
 void sw_night();
-void day_off();
-void day_on();
-void night_noff();
-void night_non();
+void s_day_off();
+void s_day_on();
+void s_night_noff();
+void s_night_non();
 
 // Declaring available sensors & actuators
 int s5_light=1;
@@ -53,10 +53,10 @@ void resetPass(int index){
 void sw_day(){
   switch(current_state){
     case day_off:
-        day_off();
+        s_day_off();
         break;
     case day_on:
-        day_on();
+        s_day_on();
         break;
     default:
       break;
@@ -66,73 +66,91 @@ void sw_day(){
 void sw_night(){
   switch(current_state){
     case night_noff:
-        night_noff();
+        s_night_noff();
         break;
     case night_non:
-        night_non();
+        s_night_non();
         break;
     default:
       break;
   }
 }
 
-void day_off()
+void s_day_off()
 {
+  if(firstPass[day_off]){
+    shortBeep();
+    resetPass(day_off);
+  }
   digitalWrite(s5_led, LOW);
   digitalWrite(s5_buzzer, LOW);
   digitalWrite(s5_ledmode, HIGH);
 
   boolean guard = millis() - time > debounce;
-
-  if(<!TextGen not found for 'ArduinoML.structure.ActionInputAnalog'!> && guard){
+  if(analogRead(s5_light) < 300 && guard){
+    time = millis();
+    current_mode = night;
+    current_state = def_state_night;
+    return;
+  }
+  if(digitalRead(s5_btn) == HIGH && guard){
     time = millis();
     current_state = day_on;
   }
 }
 
-void day_on()
+void s_day_on()
 {
-  if(firstPass[day_on]){
-    shortBeep();
-    resetPass(day_on);
-  }
+  resetPass(day_on);
   digitalWrite(s5_buzzer, HIGH);
   digitalWrite(s5_led, HIGH);
 
   boolean guard = millis() - time > debounce;
-
+  if(analogRead(s5_light) < 300 && guard){
+    time = millis();
+    current_mode = night;
+    current_state = def_state_night;
+    return;
+  }
   if(digitalRead(s5_btn) == LOW && guard){
     time = millis();
     current_state = day_off;
   }
 }
 
-void night_noff()
+void s_night_noff()
 {
+  resetPass(night_noff);
   digitalWrite(s5_ledmode, LOW);
   digitalWrite(s5_led, LOW);
   digitalWrite(s5_buzzer, LOW);
 
   boolean guard = millis() - time > debounce;
-
+  if(analogRead(s5_light) > 300 && guard){
+    time = millis();
+    current_mode = day;
+    current_state = def_state_day;
+    return;
+  }
   if(digitalRead(s5_btn) == HIGH && guard){
     time = millis();
     current_state = night_non;
   }
 }
 
-void night_non()
+void s_night_non()
 {
-  if(firstPass[night_non]){
-    shortBeep();
-    shortBeep();
-    resetPass(night_non);
-  }
+  resetPass(night_non);
   digitalWrite(s5_led, HIGH);
   digitalWrite(s5_buzzer, HIGH);
 
   boolean guard = millis() - time > debounce;
-
+  if(analogRead(s5_light) > 300 && guard){
+    time = millis();
+    current_mode = day;
+    current_state = def_state_day;
+    return;
+  }
   if(digitalRead(s5_btn) == LOW && guard){
     time = millis();
     current_state = night_noff;
