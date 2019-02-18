@@ -102,21 +102,51 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
             for rown in range(0,  nb_states):
                 table.append([0] * 10)
 
-            f, axarr = plot.subplots(5, sharex=True, sharey=True)
-            plot.ion()  # non-blocking flag
+            #f, axarr = plot.subplots(5, sharex=True, sharey=True)
+            #plot.ion()  # non-blocking flag
 
             ############################################################################################################
 
             while True:
+                # current context
                 ctx = serial_to_mode_state(str(ser.readline().decode("utf-8").strip()))
-                h = bind_mode_state_to_human(ctx, modes, states)
-                print(h)
-                plot.ylim(-0.1, 1.1)
-                plot.pause(.1)
 
+                # dbg
+                # print(bind_mode_state_to_human(ctx, modes, states))
+                print(ctx)
 
+                # plot tweaking
+                #plot.ylim(-0.1, 1.1)
+                #plot.pause(.1)
 
-                plot.show()
+                # update data model
+                # remove first element of each line
+                # append at each row 0, except 1 for the current mode
+                for i in range(0, nb_states):
+                    table[i].pop(0)
+                    if int(ctx['state']) == i:
+                        table[i].append(1)
+                    else:
+                        table[i].append(0)
+
+                # update plot visual
+                # for j in range(0, 4):
+                #     # print(j)
+                #     axarr[j].clear()
+                #     axarr[j].plot(x_values, table[j], drawstyle='steps-pre')
+                #     label = 'X'
+                #     if j == 0:
+                #         label = '0'
+                #     elif j == 1:
+                #         label = '1'
+                #     elif j == 2:
+                #         label = '2'
+                #     elif j == 3:
+                #         label = '3'
+                #     axarr[j].set(xlabel="", ylabel=label)
+
+                # tick update
+                # plot.show()
         else:
             # no sync
             print('Unable to synchronize. Abort !')
