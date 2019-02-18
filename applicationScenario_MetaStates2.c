@@ -145,8 +145,12 @@ void setup()
 
   delay(200);
   
+  // Kept here for reference
+  // enum mode{day,night}current_mode = day;
+  // enum state{day_off,day_on,night_noff,night_non}current_state = day_off;
+
   Serial.print("#hello:\n");
-  Serial.print("#states:day_state_off=0,day_state_on=1,night_state_off=0,night_state_on=1\n");
+  Serial.print("#states:day_off=0,day_on=1,night_noff=2,night_non=3\n");
   Serial.print("#modes:day=0,night=1\n");
   Serial.print("#params:key=value,key2=value3\n");
   Serial.print("#eoi:\n");
