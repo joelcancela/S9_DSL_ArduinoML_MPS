@@ -19,3 +19,16 @@ $ sudo usermod -a -G plugdev nikita
 ```
 
 > For example the dialout group allows access to the serial ports via files in /dev
+
+
+## Install Dependencies
+
+```bash
+apt-get install python3-tk
+# or maybe the command below depending on your python installation
+apt-get install python3.7-tk
+
+
+python -m pip install --upgrade pip
+pip install --trusted-host pypi.python.org -r requirements.txt
+```

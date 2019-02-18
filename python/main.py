@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import serial.tools.list_ports
 import serial
+import matplotlib.pyplot as plot
 
 
 def serial_to_key_value(raw_string):
@@ -59,6 +60,7 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
             print('Ready !')
 
             # parse hello initialization header
+            ############################################################################################################
             print('Initialization...')
 
             hello = str(ser.readline().decode("utf-8").strip())         # #hello:       -- SKIP
@@ -75,12 +77,46 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
             eoi = str(ser.readline().decode("utf-8").strip())           # #eoi:         -- SKIP
             monitor = str(ser.readline().decode("utf-8").strip())       # #monitor:     -- SKIP
 
+            ############################################################################################################
             print('End of initialization...')
+
+            # plot configuration
+            ############################################################################################################
+
+            # Plot params
+            # number of values on x axis (10 by default)
+            x_values = range(0, 10)
+
+            # Number of states
+            nb_states = len(states.keys())
+
+            # state_one= [0,0,0,1,1,1,0,0,0]
+            # state_two= [1,1,1,0,0,0,1,1,1]
+            # tables = [state_one, state_two]
+            # Multi-dimensional array
+            # Each row is a state
+            # Each col is the state on/off boolean
+            table = []
+
+            # Init states table rows
+            for rown in range(0,  nb_states):
+                table.append([0] * 10)
+
+            f, axarr = plot.subplots(5, sharex=True, sharey=True)
+            plot.ion()  # non-blocking flag
+
+            ############################################################################################################
 
             while True:
                 ctx = serial_to_mode_state(str(ser.readline().decode("utf-8").strip()))
                 h = bind_mode_state_to_human(ctx, modes, states)
                 print(h)
+                plot.ylim(-0.1, 1.1)
+                plot.pause(.1)
+
+
+
+                plot.show()
         else:
             # no sync
             print('Unable to synchronize. Abort !')
