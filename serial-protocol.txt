@@ -15,7 +15,7 @@ Client (Arduino)
 
 Server (Python Listener)
 ========================
-1) loop until '#hello' message
+1) Send '*' each 500 ms until '#hello:' message
 2) skip, wait for <states>, then parse & store
 3) skip, wait for <modes>, ...
 4) skip, wait for <settings>, ..
