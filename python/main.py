@@ -9,6 +9,17 @@ import matplotlib.pyplot as plot
 from time import sleep, time
 
 
+__product__ = "Arduino Serial Plotting"
+__author__ = "Nassim BOUNOUAS, Nikita ROUSSEAU"
+__copyright__ = "Copyright 2019, Polytech Nice Sophia"
+__credits__ = ["Nassim BOUNOUAS", "Nikita Rousseau"]
+__license__ = "MIT"
+__version__ = "2.0"
+__maintainer__ = "Nikita ROUSSEAU"
+__email__ = "nikita.rousseau@etu.unice.fr"
+__status__ = "development"
+
+
 # CLEAN EXIT EVENT
 t_stop_event = threading.Event()
 
@@ -46,7 +57,7 @@ def serial_to_mode_state(raw_string):
 
 def bind_mode_state_to_human(dict_ctx, dict_modes, dict_states):
     h_mode = "Unknown mode"
-    h_state = "Uknown state"
+    h_state = "Unknown state"
 
     # resolve mode
     for key, value in dict_modes.items():
