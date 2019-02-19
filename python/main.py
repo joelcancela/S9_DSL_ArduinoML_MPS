@@ -3,11 +3,10 @@ import os
 import queue
 import signal
 import threading
-from time import sleep, time
-
 import serial.tools.list_ports
 import serial
 import matplotlib.pyplot as plot
+from time import sleep, time
 
 
 # CLEAN EXIT EVENT
@@ -89,9 +88,9 @@ def tkinter_worker(rows, dq, ):
         # inspect new messages each 100 ms (1/10)
         sleep(0.1)
         try:
-            if mq.qsize() > 0:
-                ctx = mq.get()
-                print(ctx)
+            if dq.qsize() > 0:
+                ctx = dq.get()
+                # print(ctx)
 
                 # plot tweaking
                 plot.ylim(-0.1, 1.1)
@@ -112,16 +111,10 @@ def tkinter_worker(rows, dq, ):
                     axarr[j].clear()
                     axarr[j].plot(x_values, table[j], drawstyle='steps-pre')
 
-                    # TODO: generate labels depending on the number of states/rows
-                    label = 'X'
-                    if j == 0:
-                        label = '0'
-                    elif j == 1:
-                        label = '1'
-                    elif j == 2:
-                        label = '2'
-                    elif j == 3:
-                        label = '3'
+                    # TODO: states should be passed as an argument
+                    # not a global var. It is ugly
+                    labels = dict((v, k) for k, v in states.items())
+                    label = labels[str(j)]
 
                     axarr[j].set(xlabel="", ylabel=label)
 
@@ -200,12 +193,12 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
                 # current context
                 context = serial_to_mode_state(str(ser.readline().decode("utf-8").strip()))
 
-                # dbg
-                # print(bind_mode_state_to_human(context, modes, states))
-
                 # send new context to plot thread
                 # each notification has a cooldown of 1000 ms
                 if (int(round(time() * 1000)) - millis) > 1000:
+                    # dbg
+                    print(bind_mode_state_to_human(context, modes, states))
+
                     mq.put(context)
                     millis = int(round(time() * 1000))
 
