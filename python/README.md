@@ -1,6 +1,10 @@
 # Python Serial Listener for Arduino
 
 
+## Usage
+
+Start the python listener before connecting the Arduino to the computer.
+
 ## Serial port communication
 
 *Troubleshooting*
