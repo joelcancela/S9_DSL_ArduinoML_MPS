@@ -3,7 +3,7 @@ import os
 import queue
 import signal
 import threading
-from time import sleep
+from time import sleep, time
 
 import serial.tools.list_ports
 import serial
@@ -86,10 +86,12 @@ def tkinter_worker(rows, dq, ):
     plot.ion()  # non-blocking flag
 
     while not t_stop_event.is_set():
+        # inspect new messages each 100 ms (1/10)
         sleep(0.1)
         try:
             if mq.qsize() > 0:
                 ctx = mq.get()
+                print(ctx)
 
                 # plot tweaking
                 plot.ylim(-0.1, 1.1)
@@ -192,6 +194,8 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
 
             ############################################################################################################
 
+            millis = int(round(time() * 1000))
+
             while not t_stop_event.is_set():
                 # current context
                 context = serial_to_mode_state(str(ser.readline().decode("utf-8").strip()))
@@ -200,7 +204,10 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
                 # print(bind_mode_state_to_human(context, modes, states))
 
                 # send new context to plot thread
-                mq.put(context)
+                # each notification has a cooldown of 1000 ms
+                if (int(round(time() * 1000)) - millis) > 1000:
+                    mq.put(context)
+                    millis = int(round(time() * 1000))
 
             ############################################################################################################
 
