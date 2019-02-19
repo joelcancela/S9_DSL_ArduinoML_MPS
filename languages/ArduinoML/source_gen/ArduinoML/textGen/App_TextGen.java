@@ -315,6 +315,75 @@ public class App_TextGen extends TextGenDescriptorBase {
         tgs.newLine();
       }
     });
+    if (SPropertyOperations.getBoolean(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x3d66bdafd5e612a8L, "enablePlot")) == true) {
+      tgs.indent();
+      tgs.append("Serial.begin(19200);");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("while (!Serial) {}");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("delay(5000);");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.write('*');");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("delay(200);");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.print(\"#hello:\\n\");");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.print(\"#states:");
+      final Wrappers._int i = new Wrappers._int(0);
+      ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
+        public void visit(final SNode itm) {
+          ListSequence.fromList(SLinkOperations.getChildren(itm, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode its) {
+              tgs.append(SPropertyOperations.getString(itm, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              tgs.append("_");
+              tgs.append(SPropertyOperations.getString(its, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              tgs.append("=");
+              tgs.append(Integer.toString(i.value));
+              i.value++;
+              if ((int) ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).indexOf(itm) == ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).count() - 1 && (int) ListSequence.fromList(SLinkOperations.getChildren(itm, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).indexOf(its) == ListSequence.fromList(SLinkOperations.getChildren(itm, MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x5b1db7306c83b39bL, 0x5b1db7306c83b3a2L, "states"))).count() - 1) {
+              } else {
+                tgs.append(",");
+              }
+            }
+          });
+        }
+      });
+      tgs.append("\\n\");");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.print(\"#modes:");
+      ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          tgs.append(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          tgs.append("=");
+          tgs.append(Integer.toString(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes")).indexOf(it)));
+          if (ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).indexOf(it) != ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x110dd9137bf9a48L, "modes"))).count() - 1) {
+            tgs.append(",");
+          }
+        }
+      });
+      tgs.append("\\n\");");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.print(\"#params:key=value,key2=value3\\n\");");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.print(\"#eoi:\\n\");");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("Serial.print(\"#monitor:\\n\");");
+      tgs.newLine();
+      tgs.indent();
+      tgs.append("delay(200);");
+      tgs.newLine();
+    }
     ctx.getBuffer().area().decreaseIndent();
     tgs.append("}");
     tgs.newLine();
@@ -325,6 +394,11 @@ public class App_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
     tgs.indent();
+    if (SPropertyOperations.getBoolean(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0x99409c00ced4933L, 0xb9e3928d0c704016L, 0x110dd9137bf9a23L, 0x3d66bdafd5e612a8L, "enablePlot")) == true) {
+      tgs.append("Serial.print(String(current_mode) + ',' + String(current_state) + '\\n');");
+      tgs.newLine();
+      tgs.indent();
+    }
     tgs.append("switch(current_mode){");
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
