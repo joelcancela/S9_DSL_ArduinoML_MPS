@@ -139,14 +139,19 @@ def tkinter_worker(rows, dq, ):
 # MAIN
 ########################################################################################################################
 
-port = ""
-ports = list(serial.tools.list_ports.comports())
-try:
-    port = [p for p in ports if "Arduino" in p[1]][0]
-except IndexError:
-    if len(ports) == 0:
-        exit(1)
-    port = ports[0]
+print("Waiting for serial port...")
+
+port = None
+while port is None:
+    print(".")
+    ports = list(serial.tools.list_ports.comports())
+    try:
+        port = [p for p in ports if "Arduino" in p[1]][0]
+    except IndexError:
+        if len(ports) > 0:
+            port = ports[0]
+    sleep(0.5)
+
 print("Connected on " + str(port) + "...")
 
 print("Waiting for communication...")
@@ -221,7 +226,9 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
             print('Unable to synchronize. Abort !')
             exit(1)
     except UnicodeDecodeError as eude:
-        print(eude)
+        # print(eude)
+        print("Unable to synchronize. Abort !")
+        exit(1)
     except ValueError as eve:
         print(eve)
     except KeyboardInterrupt as eki:
