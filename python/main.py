@@ -1,7 +1,31 @@
 #!/usr/bin/env python
+import os
+import queue
+import signal
+import threading
+from time import sleep
+
 import serial.tools.list_ports
 import serial
 import matplotlib.pyplot as plot
+
+
+# CLEAN EXIT EVENT
+t_stop_event = threading.Event()
+
+
+def __sigint_handler(sig, frame):
+    """
+    Catch CTR+C / KILL signals
+    Do housekeeping before leaving
+    """
+    t_stop_event.set()  # Set stop flag to true for all launched threads
+    sleep(1)
+    os.kill(os.getpid(), signal.SIGTERM)
+
+
+signal.signal(signal.SIGINT, __sigint_handler)
+signal.signal(signal.SIGTERM, __sigint_handler)
 
 
 def serial_to_key_value(raw_string):
@@ -40,12 +64,81 @@ def bind_mode_state_to_human(dict_ctx, dict_modes, dict_states):
     return "[" + h_mode + "] " + h_state + " -- "
 
 
+def tkinter_worker(rows, dq, ):
+    # Plot params
+    # number of values on x axis (10 by default)
+    x_values = range(0, 10)
+
+    # state_one= [0,0,0,1,1,1,0,0,0]
+    # state_two= [1,1,1,0,0,0,1,1,1]
+    # tables = [state_one, state_two]
+
+    # Multi-dimensional array
+    # Each row is a state
+    # Each col is the state on/off boolean
+    table = []
+
+    # Init states table rows
+    for row in range(0, rows):
+        table.append([0] * 10)
+
+    f, axarr = plot.subplots(5, sharex=True, sharey=True)
+    plot.ion()  # non-blocking flag
+
+    while not t_stop_event.is_set():
+        sleep(0.1)
+        try:
+            if mq.qsize() > 0:
+                ctx = mq.get()
+
+                # plot tweaking
+                plot.ylim(-0.1, 1.1)
+                plot.pause(.1)
+
+                # update data model
+                # remove first element of each line
+                # append at each row 0, except 1 for the current mode
+                for i in range(0, rows):
+                    table[i].pop(0)
+                    if int(ctx['state']) == i:
+                        table[i].append(1)
+                    else:
+                        table[i].append(0)
+
+                # update plot visual
+                for j in range(0, rows):
+                    axarr[j].clear()
+                    axarr[j].plot(x_values, table[j], drawstyle='steps-pre')
+
+                    # TODO: generate labels depending on the number of states/rows
+                    label = 'X'
+                    if j == 0:
+                        label = '0'
+                    elif j == 1:
+                        label = '1'
+                    elif j == 2:
+                        label = '2'
+                    elif j == 3:
+                        label = '3'
+
+                    axarr[j].set(xlabel="", ylabel=label)
+
+                # tick update
+                plot.show()
+        except Exception as e:
+            print(e)
+
+
+########################################################################################################################
+# MAIN
+########################################################################################################################
+
 port = ""
 ports = list(serial.tools.list_ports.comports())
 try:
     port = [p for p in ports if "Arduino" in p[1]][0]
 except IndexError:
-    if len(ports[0]) == 0:
+    if len(ports) == 0:
         exit(1)
     port = ports[0]
 print("Connected on " + str(port) + "...")
@@ -83,70 +176,35 @@ with serial.Serial(port.device, 19200, timeout=10) as ser:
             # plot configuration
             ############################################################################################################
 
-            # Plot params
-            # number of values on x axis (10 by default)
-            x_values = range(0, 10)
-
             # Number of states
             nb_states = len(states.keys())
 
-            # state_one= [0,0,0,1,1,1,0,0,0]
-            # state_two= [1,1,1,0,0,0,1,1,1]
-            # tables = [state_one, state_two]
-            # Multi-dimensional array
-            # Each row is a state
-            # Each col is the state on/off boolean
-            table = []
+            # communication channel
+            mq = queue.Queue()
 
-            # Init states table rows
-            for rown in range(0,  nb_states):
-                table.append([0] * 10)
-
-            #f, axarr = plot.subplots(5, sharex=True, sharey=True)
-            #plot.ion()  # non-blocking flag
+            # Start plot threading
+            t_tkinter_worker = threading.Thread(
+                name='tkinter_worker',
+                target=tkinter_worker,
+                args=(nb_states, mq,)
+            )
+            t_tkinter_worker.start()
 
             ############################################################################################################
 
-            while True:
+            while not t_stop_event.is_set():
                 # current context
-                ctx = serial_to_mode_state(str(ser.readline().decode("utf-8").strip()))
+                context = serial_to_mode_state(str(ser.readline().decode("utf-8").strip()))
 
                 # dbg
-                # print(bind_mode_state_to_human(ctx, modes, states))
-                print(ctx)
+                # print(bind_mode_state_to_human(context, modes, states))
 
-                # plot tweaking
-                #plot.ylim(-0.1, 1.1)
-                #plot.pause(.1)
+                # send new context to plot thread
+                mq.put(context)
 
-                # update data model
-                # remove first element of each line
-                # append at each row 0, except 1 for the current mode
-                for i in range(0, nb_states):
-                    table[i].pop(0)
-                    if int(ctx['state']) == i:
-                        table[i].append(1)
-                    else:
-                        table[i].append(0)
+            ############################################################################################################
 
-                # update plot visual
-                # for j in range(0, 4):
-                #     # print(j)
-                #     axarr[j].clear()
-                #     axarr[j].plot(x_values, table[j], drawstyle='steps-pre')
-                #     label = 'X'
-                #     if j == 0:
-                #         label = '0'
-                #     elif j == 1:
-                #         label = '1'
-                #     elif j == 2:
-                #         label = '2'
-                #     elif j == 3:
-                #         label = '3'
-                #     axarr[j].set(xlabel="", ylabel=label)
-
-                # tick update
-                # plot.show()
+            exit(0)
         else:
             # no sync
             print('Unable to synchronize. Abort !')
